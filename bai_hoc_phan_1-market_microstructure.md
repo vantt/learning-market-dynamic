@@ -1079,49 +1079,57 @@ Hãy giải thích không dùng thuật ngữ chuyên môn:
 
 ---
 
-# 17. Bản đồ liên kết (Connection Map)
+# 17. Bản đồ liên kết
 
-## Kiến thức cần có trước (Prerequisite)
+## Kiến thức cần có trước
 
 Trước bài này, chỉ cần hiểu:
 
 - Giao dịch luôn có hai phía.
 - Giá là giá của giao dịch đã xảy ra.
-- Mua/bán là hành động giữa người tham gia có incentive khác nhau.
+- Mua/bán là hành động giữa những người tham gia có mục tiêu và ràng buộc khác nhau.
 
-## Phần nằm trước trong chuỗi nhân quả (Upstream)
+## Phần nằm trước trong chuỗi nhân quả
 
-Điều tạo ra market microstructure:
+Điều tạo ra cấu trúc vi mô thị trường (market microstructure) là nhu cầu biến ý định giao dịch thành lệnh cụ thể, rồi xử lý các lệnh đó theo quy tắc chung.
 
-**Participants → different objectives → need to express buy/sell interest → orders → market rules**
+Chuỗi nhân quả:
 
-## Khái niệm hiện tại (Current concept)
+**Người tham gia (participants) → mục tiêu khác nhau → nhu cầu thể hiện ý định mua/bán → lệnh (orders) → quy tắc thị trường → cấu trúc vi mô thị trường**
 
-Market microstructure giải thích:
+## Khái niệm hiện tại
 
-**Orders → Order Book → Matching → Transactions → Price Formation**
+Cấu trúc vi mô thị trường giải thích cách một lệnh trở thành giao dịch và sau đó trở thành giá quan sát được.
 
-## Phần được giải thích tiếp theo (Downstream)
+Chuỗi nhân quả trung tâm:
+
+**Lệnh (orders) → sổ lệnh (order book) → khớp lệnh (matching) → giao dịch (transactions) → hình thành giá (price formation)**
+
+Nói ngắn gọn: giá không tự thay đổi. Giá thay đổi vì lệnh mua và lệnh bán tương tác với nhau trong một cơ chế khớp lệnh cụ thể.
+
+## Phần được giải thích tiếp theo
 
 Từ bài này, ta có nền tảng để học:
 
-- Liquidity.
-- Order flow.
-- Absorption.
-- Exhaustion.
-- Institutional execution.
+- Thanh khoản (liquidity).
+- Dòng lệnh (order flow).
+- Hấp thụ (absorption).
+- Cạn lực (exhaustion).
+- Thực thi lệnh của tổ chức (institutional execution).
 - Hỗ trợ/kháng cự từ lệnh và thanh khoản.
-- Breakout/pullback/failure từ cơ chế giao dịch.
+- Phá vỡ, nhịp lùi và thất bại phá vỡ từ cơ chế giao dịch.
 
-## Map nối với toàn khóa
+## Bản đồ nối với toàn khóa
 
-**Participants → Incentives → Orders → Order Book → Order Flow ↔ Liquidity → Imbalance/Absorption → Price Discovery → Price & Volume → Market Structure → Price Action → Patterns**
+Toàn khóa đi theo chuỗi:
 
-Phần 1 chủ yếu bao phủ:
+**Người tham gia (participants) → động cơ/ràng buộc (incentives) → lệnh (orders) → sổ lệnh (order book) → dòng lệnh (order flow) ↔ thanh khoản (liquidity) → mất cân bằng/hấp thụ (imbalance/absorption) → khám phá giá (price discovery) → giá và khối lượng (price & volume) → cấu trúc thị trường (market structure) → hành động giá (price action) → mô hình giá (patterns)**
 
-**Participants → Incentives → Orders → Order Book → Matching/Price Discovery**
+Phần 1 chủ yếu bao phủ đoạn đầu:
 
-Phần tiếp theo, **Liquidity**, xuất hiện tự nhiên vì sau khi hiểu lệnh khớp thế nào, câu hỏi kế tiếp là:
+**Người tham gia → động cơ/ràng buộc → lệnh → sổ lệnh → khớp lệnh/khám phá giá**
+
+Phần tiếp theo, **thanh khoản (liquidity)**, xuất hiện tự nhiên vì sau khi hiểu lệnh khớp thế nào, câu hỏi kế tiếp là:
 
 > Nếu tôi muốn giao dịch một lượng rất lớn, ai sẽ đứng phía bên kia và thị trường có đủ khả năng hấp thụ không?
 
