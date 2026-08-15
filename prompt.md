@@ -14,6 +14,51 @@ Hãy chuyển đơn vị trên thành \*\*một bài học hoàn chỉnh, sâu n
 
 
 
+\## Yêu cầu ngôn ngữ và thuật ngữ
+
+
+
+Bài học phải sử dụng \*\*tiếng Việt là ngôn ngữ chính\*\*, càng nhiều càng tốt, với câu văn rõ ràng, tự nhiên, dễ hiểu cho người tự học.
+
+
+
+Tuy nhiên, \*\*không được làm mất thuật ngữ tiếng Anh chuyên ngành\*\*. Với các concept tài chính, microstructure, trading, statistics, market design hoặc behavioral finance, hãy giữ thuật ngữ tiếng Anh quan trọng ở dạng gốc khi cần thiết.
+
+
+
+Ở \*\*đầu bài học\*\*, trước khi đi vào problem chính, hãy có một mục ngắn:
+
+
+
+\### Thuật ngữ cần nắm trước
+
+
+
+Liệt kê các thuật ngữ quan trọng nhất của bài theo dạng bảng:
+
+
+
+| English term | Cách gọi tiếng Việt | Định nghĩa ngắn bằng tiếng Việt |
+|---|---|---|
+
+
+
+Quy tắc cho bảng thuật ngữ:
+
+\- Chỉ liệt kê các thuật ngữ thật sự cần để hiểu bài, không biến thành glossary quá dài.
+
+\- Cột English term phải giữ đúng thuật ngữ chuyên ngành.
+
+\- Cột Cách gọi tiếng Việt nên dùng cách dịch tự nhiên, dễ hiểu; nếu chưa có cách dịch tốt, giữ tiếng Anh và giải thích bằng tiếng Việt.
+
+\- Cột Định nghĩa phải giải thích bằng tiếng Việt đơn giản, ưu tiên mechanism hơn định nghĩa sách vở.
+
+\- Sau khi đã giới thiệu thuật ngữ, trong bài có thể viết dạng \*\*thuật ngữ tiếng Việt (English term)\*\* ở lần xuất hiện đầu tiên; các lần sau dùng cách gọi nào giúp câu văn dễ hiểu nhất.
+
+\- Không lạm dụng tiếng Anh để tạo cảm giác học thuật; chỉ giữ tiếng Anh khi đó là thuật ngữ chuẩn, khó dịch chính xác, hoặc cần để đọc tài liệu quốc tế.
+
+
+
 \---
 
 
@@ -22,7 +67,7 @@ Hãy chuyển đơn vị trên thành \*\*một bài học hoàn chỉnh, sâu n
 
 
 
-Không bắt đầu bằng việc đưa hàng loạt định nghĩa.
+Ngoài bảng \*\*Thuật ngữ cần nắm trước\*\* thật ngắn ở đầu bài, không bắt đầu bằng việc đưa hàng loạt định nghĩa.
 
 
 
@@ -784,7 +829,13 @@ Giải thích tại sao concept tiếp theo xuất hiện một cách tự nhiê
 
 
 
-\- Giải thích bằng tiếng Việt; giữ thuật ngữ tiếng Anh quan trọng trong ngoặc.
+\- Giải thích chủ yếu bằng tiếng Việt, dùng câu ngắn, rõ nghĩa, tránh văn phong dịch máy hoặc quá hàn lâm.
+
+\- Giữ thuật ngữ tiếng Anh chuyên ngành quan trọng; lần đầu xuất hiện nên viết theo dạng \*\*cách gọi tiếng Việt (English term)\*\* nếu có cách dịch phù hợp.
+
+\- Mở đầu bài bằng bảng \*\*Thuật ngữ cần nắm trước\*\* gồm English term, cách gọi tiếng Việt và định nghĩa ngắn bằng tiếng Việt.
+
+\- Khi một thuật ngữ tiếng Anh không có bản dịch tiếng Việt tốt, hãy giữ nguyên tiếng Anh và giải thích thật rõ bằng tiếng Việt.
 
 \- Ưu tiên First Principles hơn học thuộc.
 
