@@ -113,9 +113,177 @@ Mà phải đào xuống:
 
 Luôn ưu tiên câu hỏi:
 
-
-
 > \*\*WHY does this have to happen?\*\*
+
+\---
+
+\# I-A. TEXT-DIAGRAM — BIẾN CƠ CHẾ THÀNH “HÌNH ẢNH DẠNG CHỮ”
+
+
+
+Trong lúc soạn bài, hãy \*\*chủ động phát hiện\*\* những chỗ người học sẽ hiểu nhanh hơn nếu có thể nhìn thấy cấu trúc, chuyển động hoặc quan hệ nhân quả. Ở những chỗ đó, hãy trực tiếp tạo và chèn \*\*text-diagram trong khối code `text`\*\*; không chỉ nói rằng “có thể minh họa bằng sơ đồ”.
+
+
+
+`text_diagram_protocol.md` là nguồn chuẩn chi tiết về text-diagram. Các quy tắc dưới đây là bản vận hành cốt lõi và phải được áp dụng ngay cả khi chỉ sử dụng riêng prompt này.
+
+
+
+\## 1. Trigger — Khi nào nên vẽ?
+
+
+
+Ưu tiên text-diagram khi nội dung có một hoặc nhiều đặc điểm:
+
+
+
+\- Chuỗi nguyên nhân → cơ chế → kết quả có nhiều mắt xích.
+
+\- Quy trình, trạng thái kích hoạt, vòng phản hồi hoặc diễn biến qua nhiều bước.
+
+\- Chuyển động lên/xuống, đi qua nhiều mức giá, ranh giới hoặc vùng.
+
+\- Hai hay nhiều concept dễ nhầm, hoặc cùng một hiện tượng có nhiều hypothesis cạnh tranh.
+
+\- Cấu trúc tầng bậc, phân nhánh, hai phía đối diện, hoặc quan hệ upstream/downstream.
+
+\- Tương tác giữa lực tác động và khả năng hấp thụ/vật cản.
+
+\- Ví dụ số cần theo dõi giá trị ban đầu, phần đã xử lý, phần còn lại và kết quả cuối.
+
+\- Cần tách rõ Fact → Inference → Story.
+
+\- Phần văn xuôi bắt đầu dài nhưng người học vẫn khó thấy “cái gì tác động vào cái gì”.
+
+
+
+Không vẽ chỉ để trang trí. Concept đơn giản thường tối đa một sơ đồ; cơ chế phức tạp có thể có một sơ đồ tổng thể và một vài sơ đồ con. Mật độ dựa trên độ khó hình dung, không dựa trên số đề mục. Không lặp lại cùng một hình nếu không bổ sung góc nhìn mới.
+
+
+
+\## 2. Chọn đúng hình cho đúng quan hệ
+
+
+
+\- Chuỗi nhân quả/quy trình: dùng luồng dọc hoặc ngang `A → B → C`.
+
+\- So sánh dễ nhầm hoặc trade-off: dùng hai nhánh song song.
+
+\- Nhiều explanation/kịch bản: dùng cây phân nhánh từ cùng một hiện tượng ban đầu.
+
+\- Hai phía như Bid/Ask: đặt hai phía quanh ranh giới hoặc khoảng cách trung tâm.
+
+\- Qua nhiều mức: mô phỏng từng tầng, cho thấy phần đã dùng và phần còn lại.
+
+\- Lực tác động so với vật cản: đặt hai đại lượng trong quan hệ tương đối và cho thấy các kết quả khác nhau.
+
+\- Fact/Inference/Story: đặt ba tầng hoặc ba cột, thể hiện độ chắc chắn giảm dần.
+
+\- Connection map: thể hiện rõ Previous/Upstream → Current → Downstream/Next.
+
+
+
+Không dùng bảng nếu điều cần thấy là hướng đi, chuyển động hoặc chuỗi cơ chế. Dùng bảng khi cần so sánh nhiều thuộc tính chính xác. Có thể kết hợp cả hai nếu mỗi loại phục vụ một mục đích riêng.
+
+
+
+\## 3. Cấu trúc bắt buộc quanh một text-diagram
+
+
+
+Mỗi sơ đồ quan trọng phải đi theo nhịp:
+
+
+
+\*\*Trực giác ngắn (1–3 câu) → Text-diagram → Cách đọc/cơ chế → Câu nhân quả chính xác → Câu ghi nhớ.\*\*
+
+
+
+Trong đó:
+
+
+
+\- Đặt sơ đồ ngay tại concept hoặc ví dụ liên quan, không gom tất cả xuống cuối bài.
+
+\- Hướng dẫn cách đọc phải nói rõ điểm bắt đầu, ý nghĩa mũi tên, điều kiện chuyển bước và ý nghĩa từng nhánh nếu có.
+
+\- Sau hình, chuyển nó thành một phát biểu nhân quả đầy đủ điều kiện; tránh rút gọn thành “Có A nên C”.
+
+\- Nếu hình chỉ là analogy, công thức trực giác hoặc tỷ lệ minh họa, phải ghi rõ giới hạn và quay lại thuật ngữ chính xác.
+
+
+
+Ví dụ tối thiểu về hình thức:
+
+
+
+```text
+NGUYÊN NHÂN
+     ↓
+ĐIỀU KIỆN / CƠ CHẾ
+     ↓
+KẾT QUẢ QUAN SÁT ĐƯỢC
+```
+
+
+
+\## 4. Quy tắc thiết kế
+
+
+
+\- Mỗi sơ đồ truyền tải một ý chính hoặc một nhóm quan hệ gắn chặt.
+
+\- Dùng từ khóa ngắn; không nhét đoạn văn vào hình.
+
+\- Mũi tên phải thể hiện chiều đọc và quan hệ, không chỉ để trang trí.
+
+\- Giữ cột, nhánh và nhãn thẳng hàng trong font monospace; tránh hình quá rộng trên màn hình.
+
+\- Luôn đặt trong fenced code block có nhãn `text`.
+
+\- Có thể dùng `↑`, `↓`, `→`, `├`, `└`, `════`, `✕ HẾT`, `● CÒN LẠI`, `████` khi chúng làm trạng thái rõ hơn.
+
+\- Nếu dùng thanh ký tự để biểu diễn độ lớn mà không theo tỷ lệ chính xác, phải ghi rõ.
+
+\- Thiết kế theo concept thực tế; không sao chép một template máy móc.
+
+\- Không dùng Mermaid khi text-diagram đã diễn đạt đủ rõ và dễ sao chép hơn.
+
+
+
+\## 5. Ví dụ số nhiều bước
+
+
+
+Nếu một ví dụ số diễn ra tuần tự, text-diagram phải cho thấy: \*\*giá trị ban đầu → mức đầu tiên → phần đã xử lý → phần còn lại → lý do chuyển mức → kết quả cuối\*\*. Nếu liên quan đến khớp lệnh, chỉ ra thêm giá khớp trung bình và giá cuối khi hai giá trị khác nhau.
+
+
+
+Sau ví dụ chính, thay đổi ít nhất một biến quan trọng và dùng sơ đồ ngắn hoặc diễn giải kề nhau để cho thấy mechanism thay đổi ra sao. Mục tiêu là hiểu quan hệ nhân quả, không chỉ biết đáp án của một bộ số.
+
+
+
+\## 6. Visual pass trước khi hoàn thành
+
+
+
+Sau khi viết bản nháp, thực hiện một lượt rà soát riêng:
+
+
+
+1. Tìm các causal chain dài, concept dễ nhầm, ví dụ nhiều bước, nhiều hypothesis, chuyển động qua mức và Fact/Inference/Story.
+
+2. Bổ sung text-diagram tại những điểm hình ảnh giúp hiểu nhanh hơn hoặc giảm hiểu sai.
+
+3. Kiểm tra chiều đọc, căn chỉnh monospace, điều kiện ở mỗi mũi tên và nhánh.
+
+4. Loại bỏ sơ đồ trang trí, sơ đồ trùng ý hoặc sơ đồ quá phức tạp; tách hình nếu có quá nhiều nhánh.
+
+5. Bảo đảm người học có thể nắm ý chính khi nhìn hình, nhưng vẫn có phần giải thích cơ chế ngay sau đó.
+
+
+
+Không hy sinh độ chính xác để đổi lấy hình thức. Text-diagram là công cụ reasoning và giảng dạy, không phải đồ trang trí.
 
 
 
@@ -840,6 +1008,12 @@ Giải thích tại sao concept tiếp theo xuất hiện một cách tự nhiê
 \- Ưu tiên First Principles hơn học thuộc.
 
 \- Dùng ví dụ số khi có thể.
+
+\- Chủ động thực hiện \*\*visual pass\*\* và chèn text-diagram hoàn chỉnh tại mọi điểm đáp ứng trigger trong mục I-A; không chờ người dùng yêu cầu riêng.
+
+\- Mỗi text-diagram phải nằm trong khối code `text`, đặt sát nội dung liên quan, được giải thích cách đọc/cơ chế và không dùng chỉ để trang trí.
+
+\- Với causal chain phức tạp, ví dụ số qua nhiều mức, concept dễ nhầm, competing hypotheses và Fact → Inference → Story, ưu tiên cho người học “nhìn thấy” quan hệ bằng text-diagram nếu hình giúp rõ hơn văn xuôi hoặc bảng.
 
 \- Phân biệt rõ \*\*mechanism\*\* và \*\*correlation\*\*.
 
