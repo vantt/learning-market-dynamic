@@ -63,6 +63,28 @@ Bây giờ phân rã:
 - Lệnh mua tiếp tục khớp với 1,500 trong 3,000 cổ phiếu tại 100.2.
 - Giao dịch cuối cùng xảy ra tại 100.2.
 
+Hãy nhìn lệnh này như một nhu cầu mua phải đi lần lượt qua từng “tầng” thanh khoản:
+
+```text
+NHU CẦU BAN ĐẦU: MARKET BUY 4,500 CP
+                       ↓
+ASK 100.0 ── có 1,000 ── dùng hết 1,000 ── ✕ HẾT
+                       ↓ còn mua 3,500
+ASK 100.1 ── có 2,000 ── dùng hết 2,000 ── ✕ HẾT
+                       ↓ còn mua 1,500
+ASK 100.2 ── có 3,000 ── dùng 1,500 ────── ● CÒN 1,500
+                       ↓
+                    HOÀN TẤT
+          GIÁ CUỐI = 100.2
+          GIÁ TB   ≈ 100.111
+```
+
+**Cách đọc:** bắt đầu từ nhu cầu 4,500 cổ phiếu ở trên. Mỗi mũi tên đi xuống chỉ xuất hiện khi lượng bán ở mức hiện tại không đủ hoàn tất lệnh. Giá cuối là giá của phần khớp sau cùng; giá trung bình là tổng giá trị khớp chia cho 4,500 cổ phiếu, nên hai giá này không giống nhau.
+
+Phát biểu nhân quả chính xác là: **khi lượng mua chủ động lớn hơn lượng bán đang chờ tại các mức chào bán thấp nhất, phần chưa khớp phải đi lên mức chào bán cao hơn, khiến giá giao dịch cuối tăng.**
+
+> **Ghi nhớ:** chưa mua đủ thì phải đi lên tầng giá kế tiếp.
+
 Kết quả:
 
 | Giá khớp | Khối lượng khớp |
@@ -141,6 +163,28 @@ Trong phần 1, ta tập trung vào:
 
 **Người tham gia (participants) → động cơ/ràng buộc (incentives) → lệnh (orders) → sổ lệnh (order book) → khớp lệnh (matching) → giao dịch (transactions) → giá (price)**
 
+```text
+NGƯỜI THAM GIA
+      ↓ có mục tiêu và ràng buộc
+ĐỘNG CƠ / QUYẾT ĐỊNH
+      ↓ được mã hóa thành
+     LỆNH
+      ↓ được xếp trong
+    SỔ LỆNH
+      ↓ gặp lệnh tương thích
+   KHỚP LỆNH
+      ↓ tạo ra
+   GIAO DỊCH
+      ↓ để lại dấu vết
+ GIÁ QUAN SÁT ĐƯỢC
+```
+
+**Cách đọc:** đi từ trên xuống. Mỗi mũi tên là một phép chuyển đổi bắt buộc: ý định phải thành lệnh, lệnh phải được xử lý theo quy tắc, và chỉ giao dịch đã khớp mới tạo ra giá giao dịch.
+
+Vì vậy, **ý định không trực tiếp làm giá đổi; ý định chỉ có thể tác động đến giá sau khi trở thành lệnh và tương tác thành công với thanh khoản phía đối diện.**
+
+> **Ghi nhớ:** giá là đầu ra của quá trình tương tác lệnh, không phải điểm khởi đầu.
+
 Trong đó:
 
 - **Người tham gia (participants)** là người hoặc thuật toán tham gia thị trường.
@@ -170,6 +214,26 @@ Trong đó:
 Một lệnh đơn giản thường đi qua chuỗi:
 
 **Nhà giao dịch (trader) → công ty môi giới (broker) → sàn giao dịch (exchange) → hệ thống khớp lệnh (matching engine) → phía đối ứng (counterparty) → bù trừ (clearing) → lưu ký (custody)**
+
+```text
+NHÀ GIAO DỊCH
+      ↓ gửi chỉ thị
+   MÔI GIỚI
+      ↓ kiểm tra và chuyển lệnh
+ SÀN / HỆ THỐNG KHỚP
+      ↓ tìm lệnh tương thích
+  PHÍA ĐỐI ỨNG
+      ↓ giao dịch được xác lập
+    BÙ TRỪ
+      ↓ hoàn tất nghĩa vụ
+    LƯU KÝ
+```
+
+**Cách đọc:** luồng đi từ quyết định giao dịch tới việc hoàn tất quyền và nghĩa vụ. Mũi tên giữa hệ thống khớp và phía đối ứng chỉ xảy ra nếu có lệnh tương thích về giá và khối lượng.
+
+Phát biểu chính xác: **một chỉ thị mua chỉ trở thành giao dịch khi hạ tầng thị trường tìm được một hoặc nhiều lệnh bán tương thích; sau đó bù trừ và lưu ký mới hoàn tất việc chuyển tiền và tài sản.**
+
+> **Ghi nhớ:** mọi giao dịch đều cần một phía đối ứng; “thị trường” không tự bán tài sản cho bạn.
 
 Giải thích từng mắt xích:
 
@@ -272,6 +336,30 @@ Một lệnh là **chủ động (aggressive)** nếu nó yêu cầu khớp ngay
 
 Một lệnh là **thụ động (passive)** nếu nó nằm chờ và cung cấp thanh khoản.
 
+Hai loại lệnh thể hiện hai ưu tiên và hai đánh đổi khác nhau:
+
+```text
+                         NHU CẦU GIAO DỊCH
+                                │
+                  ┌─────────────┴─────────────┐
+                  │                           │
+           MARKET ORDER                  LIMIT ORDER
+             ưu tiên “NGAY”                ưu tiên “GIÁ”
+                  │                           │
+         tiêu thụ thanh khoản        thường cung cấp thanh khoản
+                  │                           │
+          khớp chắc hơn                 giá được kiểm soát hơn
+                  │                           │
+        có thể trượt giá                có thể không được khớp
+             AGGRESSIVE                     PASSIVE
+```
+
+**Cách đọc:** bắt đầu từ cùng một nhu cầu giao dịch rồi chọn nhánh theo thứ bạn ưu tiên. Nhánh trái đổi khả năng kiểm soát giá lấy tốc độ; nhánh phải đổi khả năng khớp ngay lấy quyền kiểm soát giá. “Limit order” chỉ thụ động khi nó không đặt xuyên qua phía đối diện; limit có thể trở thành **marketable** và khớp ngay.
+
+Vì vậy, **loại lệnh không biểu thị bạn bullish hay bearish; nó biểu thị cách bạn đánh đổi giữa tốc độ khớp và mức giá khớp.**
+
+> **Ghi nhớ:** market order chắc khớp hơn nhưng không chắc giá; limit order chắc giá hơn nhưng không chắc khớp.
+
 Không nên nói đơn giản “buyer làm giá tăng”. Cần hỏi:
 
 - Người mua đó là người mua chủ động (aggressive buyer) hay người mua thụ động (passive buyer)?
@@ -296,6 +384,31 @@ Giả sử sổ lệnh tốt nhất đang là:
 **Giá giữa (mid-price)** là:
 
 `(Giá chào mua tốt nhất + giá chào bán tốt nhất) / 2 = 99.95`
+
+Hai phía của sổ lệnh được ngăn bởi vùng giá chưa có sự đồng thuận:
+
+```text
+                 NGƯỜI BÁN ĐANG CHỜ
+                         ASK
+                          │
+                  100.1 ──┤ mức bán cao hơn
+                  100.0 ──┤ 3,000 CP ← BEST ASK
+══════════════════════════════════════════
+                   SPREAD = 0.1
+                   MID    = 99.95
+══════════════════════════════════════════
+                   99.9 ──┤ 5,000 CP ← BEST BID
+                   99.8 ──┤ mức mua thấp hơn
+                          │
+                         BID
+                 NGƯỜI MUA ĐANG CHỜ
+```
+
+**Cách đọc:** best ask là người bán rẻ nhất ở phía trên; best bid là người mua trả cao nhất ở phía dưới. Khoảng giữa hai mức là spread. Một market buy đi lên phía ask; một market sell đi xuống phía bid.
+
+Phát biểu chính xác: **giao dịch ngay đòi hỏi một bên vượt qua khoảng chưa đồng thuận và chấp nhận giá tốt nhất đang chờ ở phía đối diện.**
+
+> **Ghi nhớ:** ask là giá người bán đòi; bid là giá người mua trả; spread là khoảng hai bên chưa đồng thuận.
 
 ### Tại sao chênh lệch mua-bán tồn tại?
 
@@ -450,6 +563,35 @@ Cơ chế:
 
 **Cùng giá trị giao dịch danh nghĩa → thanh khoản chào bán khả dụng khác nhau → số mức giá bị tiêu thụ khác nhau → trượt giá khác nhau → tác động lên giá khác nhau**
 
+Điều quyết định không phải quy mô lệnh đứng riêng, mà là quy mô lệnh **so với** khả năng hấp thụ của thị trường:
+
+```text
+                    CÙNG LỆNH MUA 1 TỶ
+                             │
+              ┌──────────────┴──────────────┐
+              │                             │
+       ASK LIQUIDITY DÀY              ASK LIQUIDITY MỎNG
+       ████████████████                      ██
+              │                             │
+       hấp thụ ở mức gần              quét qua nhiều mức
+              │                             │
+       trượt giá thấp hơn             trượt giá cao hơn
+              │                             │
+       giá ít dịch chuyển             giá dịch chuyển mạnh
+```
+
+*Các thanh ký tự chỉ minh họa độ lớn tương đối, không theo tỷ lệ định lượng.*
+
+**Cách đọc:** từ cùng một lệnh ở trên, chọn nhánh theo độ dày thanh khoản. Mũi tên đi xuống cho thấy mức độ hấp thụ quyết định số tầng giá phải đi qua.
+
+Đây là mô hình trực giác, không phải công thức định lượng chính xác:
+
+```text
+TÁC ĐỘNG LÊN GIÁ  ≈  QUY MÔ LỆNH CHỦ ĐỘNG / THANH KHOẢN KHẢ DỤNG
+```
+
+> **Ghi nhớ:** lệnh chủ động là lực đánh; thanh khoản là vật cản; giá dịch chuyển theo tương quan giữa hai bên.
+
 ### Tác động tạm thời và tác động lâu dài (Temporary impact vs Permanent impact)
 
 **Tác động tạm thời (temporary impact)**: giá dịch chuyển do lệnh ăn thanh khoản tạm thời, sau đó thanh khoản quay lại và giá hồi một phần.
@@ -553,6 +695,26 @@ Một lệnh mua lớn có thể đẩy giá lên 100.2. Nhưng nếu sau đó k
 Cơ chế:
 
 **Thanh khoản bị tiêu thụ một lần → giá dịch chuyển → không có lực chủ động tiếp diễn → người bán thụ động bổ sung lại lệnh → giá chững lại hoặc quay về**
+
+Một cú đẩy ban đầu có thể tách thành hai kịch bản rất khác:
+
+```text
+MỘT LỆNH MUA LỚN QUÉT ASK → GIÁ LÊN 100.2
+                         │
+             ┌───────────┴───────────┐
+             │                       │
+       CÓ MUA TIẾP              KHÔNG CÓ MUA TIẾP
+             +                       +
+      ASK tiếp tục bị ăn       ASK được bổ sung lại
+             │                       │
+      có thể tăng tiếp          chững hoặc quay về
+```
+
+**Cách đọc:** điểm xuất phát giống nhau, nhưng mũi tên chỉ tiếp tục theo điều kiện quan sát sau cú đẩy. Nhánh trái cần lực mua chủ động tiếp diễn; nhánh phải xuất hiện khi lực đó dừng và người bán tái cung cấp thanh khoản.
+
+Vì vậy, **một cú tăng chỉ tạo ra mức giá mới tức thời; xu hướng chỉ có cơ sở khi lực chủ động tiếp diễn hoặc thị trường chấp nhận giao dịch ở vùng giá mới.**
+
+> **Ghi nhớ:** cú đẩy giá không đồng nghĩa với xu hướng.
 
 Vì vậy, “giá vừa tăng” không tự động nghĩa là “xu hướng tăng đã hình thành”.
 
@@ -709,6 +871,26 @@ Falsification tiềm năng:
 
 Hiện tượng: giá ABC tăng từ 100 lên 103 trong 10 phút, khối lượng tăng mạnh.
 
+Trước khi chọn lời giải thích, hãy mở cây giả thuyết từ cùng một hiện tượng:
+
+```text
+                  GIÁ 100 → 103, VOLUME TĂNG
+                              │
+       ┌──────────────────────┼──────────────────────┐
+       │                      │                      │
+ MUA CHỦ ĐỘNG          THANH KHOẢN MỎNG       TIN TỨC ĐỊNH GIÁ LẠI
+       │                      │                      │
+ ask bị ăn liên tục      ít ask để hấp thụ       quote được cập nhật
+                              │
+                    SHORT COVERING / MUA BẮT BUỘC
+```
+
+**Cách đọc:** bắt đầu từ hiện tượng quan sát được ở trên, rồi đi xuống các cơ chế cạnh tranh. Các nhánh không loại trừ nhau; nhiều cơ chế có thể cùng xảy ra. Bảng dưới đây cung cấp bằng chứng để tăng hoặc giảm xác suất từng nhánh.
+
+Phát biểu chính xác: **giá và volume chỉ giới hạn tập hợp lời giải thích; muốn chọn giả thuyết có xác suất cao hơn, phải tìm dấu vết riêng của cơ chế trong order flow, liquidity, tin tức và diễn biến tiếp theo.**
+
+> **Ghi nhớ:** một hiện tượng có thể có nhiều cơ chế; bằng chứng phân biệt mới quyết định giả thuyết nào mạnh hơn.
+
 | Giả thuyết (Hypothesis) | Cơ chế (Mechanism) | Bằng chứng ủng hộ | Bằng chứng chống lại | Nếu đúng, tiếp theo nên thấy gì? |
 |---|---|---|---|---|
 | Lực mua chủ động thật sự (aggressive buying) | Lệnh mua thị trường liên tục ăn thanh khoản chào bán | Nhiều giao dịch tại giá chào bán; độ sâu phía bán bị tiêu thụ; giá giữ vùng cao | Giá tăng bằng vài lệnh nhỏ trong sổ lệnh mỏng; không có lực tiếp diễn | Nếu đúng, nhịp lùi thường nông và người mua tiếp tục hấp thụ người bán |
@@ -805,6 +987,25 @@ Khái niệm này hữu ích khi bạn muốn hiểu **giá vừa di chuyển b�
 ---
 
 # 12. FACT → INFERENCE → STORY
+
+Ba tầng này khác nhau về mức độ trực tiếp và độ chắc chắn:
+
+```text
+FACT                        INFERENCE                     STORY
+DỮ KIỆN                     SUY LUẬN                      CÂU CHUYỆN
+  │                            │                             │
+thấy trực tiếp             giải thích có xác suất        gán actor/ý định sâu
+  │                            │                             │
+giá, volume, bid/ask       mua chủ động, hấp thụ         “cá mập gom hàng”
+  │                            │                             │
+CHẮC NHẤT                  CẦN KIỂM CHỨNG                CHƯA ĐỦ BẰNG CHỨNG
+```
+
+**Cách đọc:** đi từ trái sang phải, khoảng cách với dữ liệu gốc tăng dần. Mũi chuyển tầng không làm câu sau thành sự thật; nó chỉ tạo một giả thuyết cần kiểm chứng.
+
+Phát biểu chính xác: **Fact giới hạn những gì có thể đã xảy ra, inference đề xuất cơ chế phù hợp, còn story gán danh tính hoặc ý định mà dữ liệu thường không quan sát trực tiếp được.**
+
+> **Ghi nhớ:** thấy được là Fact; suy ra là Inference; kể thêm động cơ là Story.
 
 ## Ví dụ 1
 
@@ -1124,6 +1325,22 @@ Từ bài này, ta có nền tảng để học:
 Toàn khóa đi theo chuỗi:
 
 **Người tham gia (participants) → động cơ/ràng buộc (incentives) → lệnh (orders) → sổ lệnh (order book) → dòng lệnh (order flow) ↔ thanh khoản (liquidity) → mất cân bằng/hấp thụ (imbalance/absorption) → khám phá giá (price discovery) → giá và khối lượng (price & volume) → cấu trúc thị trường (market structure) → hành động giá (price action) → mô hình giá (patterns)**
+
+```text
+PREVIOUS / UPSTREAM                  PHẦN 1                    NEXT / DOWNSTREAM
+
+NGƯỜI THAM GIA                 LỆNH → SỔ LỆNH              DÒNG LỆNH ↔ THANH KHOẢN
+       ↓                              ↓                              ↓
+ĐỘNG CƠ / RÀNG BUỘC          KHỚP LỆNH → GIAO DỊCH       MẤT CÂN BẰNG / HẤP THỤ
+                                      ↓                              ↓
+                              GIÁ ĐƯỢC HÌNH THÀNH          CẤU TRÚC / HÀNH ĐỘNG GIÁ
+```
+
+**Cách đọc:** cột trái tạo ra quyết định, cột giữa biến quyết định thành giao dịch và giá, cột phải nghiên cứu khả năng thị trường hấp thụ dòng lệnh rồi nối sang cấu trúc giá quan sát được.
+
+Phát biểu nhân quả: **participants với động cơ khác nhau tạo ra orders; orders tương tác với liquidity để hình thành transactions và price; chuỗi transaction lặp lại mới tạo thành order flow, market structure và price action.**
+
+> **Ghi nhớ:** Phần 1 đi từ ý định đến giá; Phần 2 bắt đầu từ câu hỏi thị trường hấp thụ lệnh được bao nhiêu.
 
 Phần 1 chủ yếu bao phủ đoạn đầu:
 
