@@ -1,4 +1,156 @@
-# Bài tổng quan — Bản đồ toàn khóa và mối quan hệ giữa các phần
+# Market Dynamics từ First Principles — Từ lệnh và thanh khoản đến cấu trúc giá và Wyckoff
+
+## Market Dynamics là gì?
+
+**Market Dynamics** có thể hiểu là **cơ chế vận động của thị trường**: cách hành động và phản ứng của nhiều người tham gia, dưới những mục tiêu và ràng buộc khác nhau, tương tác để tạo ra giao dịch, giá, khối lượng, thanh khoản, biến động và cấu trúc quan sát được.
+
+Nói đơn giản, Market Dynamics nghiên cứu câu hỏi:
+
+> **Điều gì thực sự xảy ra bên dưới khi giá tăng, giảm, đi ngang, phá vỡ hoặc đảo chiều?**
+
+Giá không tự di chuyển. “Thị trường” cũng không phải một con người có ý chí riêng. Mỗi chuyển động bắt đầu từ những người hoặc thuật toán cần mua, bán, chờ, hủy lệnh, phòng hộ, thoát rủi ro hoặc thực thi một vị thế lớn. Ý định của họ chỉ tác động đến giá sau khi được chuyển thành lệnh và gặp phía đối diện.
+
+```text
+NGƯỜI THAM GIA
+      ↓ có
+MỤC TIÊU + THÔNG TIN + RÀNG BUỘC
+      ↓ chuyển thành
+     LỆNH
+      ↓ tương tác với
+THANH KHOẢN + LỆNH PHÍA ĐỐI DIỆN
+      ↓ tạo ra
+   GIAO DỊCH
+      ↓ để lại dấu vết
+GIÁ + KHỐI LƯỢNG + BIẾN ĐỘNG
+      ↓ tích lũy theo thời gian
+CẤU TRÚC THỊ TRƯỜNG + HÀNH ĐỘNG GIÁ
+```
+
+**Cách đọc:** bắt đầu từ người tham gia ở trên và đi xuống. Mỗi mũi tên là một phép chuyển đổi: động cơ trở thành lệnh; lệnh chỉ tạo giao dịch khi gặp đối ứng; chuỗi giao dịch mới tạo ra dữ liệu và cấu trúc trên biểu đồ.
+
+Phát biểu nhân quả: **khi mục tiêu và ràng buộc của người tham gia thay đổi, họ thay đổi loại lệnh, mức giá hoặc mức độ khẩn cấp; điều đó làm tương quan giữa dòng lệnh và thanh khoản thay đổi, khiến giao dịch phải xảy ra ở những mức giá mới.**
+
+> **Ghi nhớ:** Market Dynamics đi tìm chuỗi nguyên nhân từ con người và lệnh đến những gì ta nhìn thấy trên biểu đồ.
+
+### Phạm vi của Market Dynamics trong khóa học này
+
+“Market Dynamics” là một khái niệm rộng. Nó có thể bao gồm kinh tế vĩ mô, định giá, chính sách tiền tệ, tâm lý, cấu trúc ngành và nhiều lực khác. Khóa học này tập trung vào một phạm vi cụ thể:
+
+> **Cơ chế giao dịch và khám phá giá — từ người tham gia, động cơ, lệnh và thanh khoản đến dòng lệnh, thực thi tổ chức, cấu trúc giá và các giả thuyết Wyckoff.**
+
+Tin tức, yếu tố cơ bản, thị trường chung và ngành vẫn được sử dụng như **bối cảnh và giả thuyết cạnh tranh**. Chúng không bị bỏ qua, nhưng khóa học không nhằm thay thế phân tích vĩ mô hoặc định giá doanh nghiệp.
+
+### Các khái niệm liên quan dễ nhầm
+
+| Khái niệm | Câu hỏi nó trả lời | Quan hệ với Market Dynamics |
+|---|---|---|
+| Market Microstructure | Lệnh được gửi, xếp và khớp ra sao? | Là tầng cơ chế nền tảng. |
+| Liquidity | Thị trường hấp thụ được bao nhiêu lệnh ở mức giá nào? | Là sức chứa và vật cản của chuyển động giá. |
+| Order Flow | Ai đang chủ động tiêu thụ thanh khoản? | Là lực đang tác động vào sức chứa đó. |
+| Market Structure | Chuỗi đỉnh, đáy, xu hướng và range hình thành thế nào? | Là dấu vết tích lũy của các tương tác trước. |
+| Price Action | Giá đang phản ứng và di chuyển ra sao? | Là lớp quan sát trực tiếp trên biểu đồ. |
+| Behavioral Finance | Thiên kiến và hành vi con người ảnh hưởng quyết định thế nào? | Giúp giải thích một phần động cơ và phản ứng. |
+| Market Dynamics | Toàn bộ các lực trên tương tác và thay đổi theo thời gian thế nào? | Là bức tranh liên kết các tầng thành một hệ thống. |
+
+Market Dynamics vì vậy **không đồng nghĩa** với Market Microstructure, Order Flow hoặc Price Action. Những khái niệm đó là các lớp khác nhau của cùng một hệ thống.
+
+```text
+MICROSTRUCTURE  →  LIQUIDITY ↔ ORDER FLOW  →  PRICE ACTION
+       cơ chế          sức chứa + lực          dấu vết trực tiếp
+                                                   ↓
+                                          MARKET STRUCTURE
+                                          cấu trúc theo thời gian
+
+MARKET DYNAMICS = CÁCH TOÀN BỘ CÁC LỚP TƯƠNG TÁC VÀ THAY ĐỔI
+```
+
+**Cách đọc:** dòng trên đi từ cơ chế gần giao dịch nhất đến dấu vết giá. Market Dynamics không nằm ở một ô riêng; nó là cách toàn bộ chuỗi tác động qua lại theo thời gian.
+
+Phát biểu chính xác: **microstructure giải thích một lệnh trở thành giao dịch; liquidity và order flow giải thích mức độ giá phản ứng; price action và market structure ghi lại kết quả của các tương tác lặp lại.**
+
+> **Ghi nhớ:** các môn nhỏ nghiên cứu từng bộ phận; Market Dynamics nghiên cứu cả hệ thống đang vận động.
+
+### Market Dynamics là một hệ thống phản hồi và thích nghi
+
+Chuỗi từ lệnh đến giá không kết thúc khi một giao dịch xuất hiện. Giá mới trở thành thông tin đầu vào cho vòng quyết định tiếp theo. Người tham gia quan sát kết quả do chính họ và những người khác cùng tạo ra, rồi thay đổi kỳ vọng, vị thế và lệnh.
+
+```text
+THÔNG TIN / GIÁ / BIẾN ĐỘNG THAY ĐỔI
+                  ↓
+NGƯỜI THAM GIA CẬP NHẬT KỲ VỌNG VÀ RỦI RO
+                  ↓
+THAY ĐỔI VỊ THẾ / LỆNH / MỨC ĐỘ KHẨN CẤP
+                  ↓
+THANH KHOẢN ĐƯỢC BỔ SUNG, RÚT ĐI HOẶC CHUYỂN VÙNG
+                  ↓
+GIAO DỊCH XẢY RA Ở NHỮNG MỨC GIÁ MỚI
+                  ↓
+GIÁ / KHỐI LƯỢNG / BIẾN ĐỘNG MỚI
+                  └──────────────────────────↺
+```
+
+**Cách đọc:** bắt đầu từ thông tin hoặc biến động ở trên, đi xuống tới kết quả giá mới rồi quay lại đầu vòng. Mũi tên vòng lại cho thấy kết quả của chu kỳ trước trở thành nguyên nhân trong chu kỳ sau.
+
+Phát biểu nhân quả: **khi giá thay đổi, người tham gia cập nhật niềm tin và rủi ro; phản ứng của họ làm dòng lệnh và thanh khoản thay đổi; điều đó tiếp tục tạo ra giá mới và kích hoạt một vòng phản hồi khác.**
+
+Vòng phản hồi có thể:
+
+- **Tự củng cố:** giá tăng → short covering/breakout buying → mua chủ động tăng → giá tăng thêm.
+- **Tự cân bằng:** giá giảm tới vùng hấp dẫn → buyer thụ động xuất hiện → sell flow được hấp thụ → giá ổn định.
+- **Đổi trạng thái:** tin tức làm liquidity providers rút quote → thị trường từ ổn định chuyển sang biến động mạnh.
+
+Đây là lý do Market Dynamics nên được xem như một **hệ thống thích nghi phức hợp (complex adaptive system)**. Không có một actor duy nhất kiểm soát toàn bộ kết quả; nhiều actor phản ứng lẫn nhau và làm cơ chế thay đổi theo thời gian.
+
+> **Ghi nhớ:** thị trường không chỉ vận động; nó còn quan sát và phản ứng với chính chuyển động vừa tạo ra.
+
+### Ta có thể biết điều gì từ dữ liệu?
+
+Một nguyên tắc xuyên suốt khóa học là không đánh đồng dữ liệu với lời giải thích. Khoảng cách càng xa dữ liệu gốc, độ chắc chắn càng giảm.
+
+```text
+QUAN SÁT TRỰC TIẾP                 SUY LUẬN CÓ ĐIỀU KIỆN              KHÔNG BIẾT CHẮC
+        │                                   │                                │
+giá, volume, bid/ask              order flow, absorption             danh tính thật của actor
+spread, depth hiển thị            liquidity ẩn, positioning          toàn bộ ý định và lệnh ẩn
+giao dịch đã khớp                 institutional execution            động cơ sâu phía sau lệnh
+        │                                   │                                │
+      FACT                          HYPOTHESIS CẦN TEST                 KHÔNG ĐƯỢC GIẢ LÀ FACT
+```
+
+**Cách đọc:** đi từ trái sang phải. Dữ liệu quan sát trực tiếp có độ chắc chắn cao nhất. Cơ chế và positioning thường phải suy luận. Danh tính hoặc ý định sâu hiếm khi được chứng minh chỉ từ biểu đồ.
+
+Phát biểu chính xác: **dữ liệu có thể giới hạn tập hợp cơ chế hợp lý và giúp cập nhật xác suất, nhưng thường không cho phép suy ra duy nhất một actor hoặc một ý định.**
+
+> **Ghi nhớ:** thấy được thì ghi là Fact; suy ra thì gọi là Hypothesis; không quan sát được thì phải giữ sự không chắc chắn.
+
+### Market Dynamics tồn tại trên nhiều thang thời gian
+
+Cùng một thị trường vận động đồng thời ở nhiều tốc độ. Mỗi thang thời gian làm nổi bật một cơ chế khác nhau:
+
+| Thang thời gian gần đúng | Cơ chế nổi bật | Dữ liệu/câu hỏi thường dùng |
+|---|---|---|
+| Microseconds–seconds | Matching, quote change, bid/ask | Lệnh khớp thế nào? Spread/depth đổi ra sao? |
+| Minutes–hours | Order flow, absorption, execution | Ai chủ động? Phía đối diện có hấp thụ không? |
+| Days–weeks | Positioning, trend, range, breakout | Giá có được chấp nhận ngoài vùng không? |
+| Weeks–months | Institutional transfer, accumulation/distribution hypotheses | Inventory có thể đang chuyển giao thế nào? |
+| Dài hơn | Fundamentals, valuation, macro regime | Giá trị và mức rủi ro nền tảng thay đổi ra sao? |
+
+```text
+KHUNG NHỎ                                      KHUNG LỚN
+MATCHING → ORDER FLOW → EXECUTION → STRUCTURE → REGIME / VALUATION
+    │           │           │           │              │
+ giao dịch   phút–giờ    giờ–ngày    ngày–tuần      tháng–năm
+
+MỘT XU HƯỚNG 5 PHÚT
+        có thể chỉ là
+MỘT LỆNH CON / MỘT NHỊP LÙI TRONG CẤU TRÚC NGÀY
+```
+
+**Cách đọc:** đi từ trái sang phải để thấy dữ liệu được nén dần từ giao dịch đơn lẻ thành trạng thái dài hạn. Cơ chế ở khung nhỏ vẫn tồn tại trong khung lớn, nhưng ý nghĩa của một chuyển động phụ thuộc phạm vi quan sát.
+
+Phát biểu nhân quả: **một institutional program kéo dài nhiều ngày có thể tạo hàng nghìn order-flow events ở khung nhỏ; vì vậy không được dùng một dấu hiệu vài phút để kết luận trực tiếp một quá trình nhiều tháng.**
+
+> **Ghi nhớ:** luôn gắn mọi nhận định với thang thời gian; cùng một chuyển động có thể là xu hướng ở khung nhỏ và chỉ là pullback ở khung lớn.
 
 ## Câu hỏi trung tâm
 
@@ -21,6 +173,7 @@ Bài này không thay thế sáu phần của giáo trình. Nó là bản đồ 
 
 | English term | Cách gọi tiếng Việt | Định nghĩa ngắn bằng tiếng Việt |
 |---|---|---|
+| Market Dynamics | Cơ chế vận động của thị trường | Cách người tham gia, lệnh, thanh khoản và thông tin tương tác để tạo ra giá, khối lượng và cấu trúc theo thời gian. |
 | Market Microstructure | Cấu trúc vi mô thị trường | Cơ chế biến lệnh mua/bán thành giao dịch và giá. |
 | Liquidity | Thanh khoản | Khả năng hấp thụ lệnh mà không làm giá dịch chuyển quá mạnh. |
 | Order Flow | Dòng lệnh | Dấu vết của lệnh chủ động đang tiêu thụ thanh khoản và phản ứng của phía đối diện. |
@@ -31,6 +184,50 @@ Bài này không thay thế sáu phần của giáo trình. Nó là bản đồ 
 | Hypothesis | Giả thuyết | Một cách giải thích có dự đoán và có thể bị bác bỏ. |
 | Falsification | Điều kiện bác bỏ | Bằng chứng khiến một giả thuyết yếu đi hoặc sai. |
 | Wyckoff | Khung Wyckoff | Khung giả thuyết về cung, cầu và chuyển giao vị thế; không phải sơ đồ đọc chắc ý định “cá mập”. |
+
+## Đi tới bài học
+
+| Thứ tự | Bài học | Câu hỏi trung tâm |
+|---:|---|---|
+| 0 | **Market Dynamics từ First Principles** — bài hiện tại | Toàn bộ các tầng liên kết với nhau như thế nào? |
+| 1 | [Cấu trúc vi mô thị trường](market_dynamic_phan_1-market_microstructure.md) | Một lệnh biến thành giao dịch và giá bằng cách nào? |
+| 2 | [Thanh khoản](market_dynamic_phan_2-thanh_khoan.md) | Thị trường hấp thụ được bao nhiêu lệnh trước khi giá phải đi xa? |
+| 3 | [Dòng lệnh](market_dynamic_phan_3-dong_lenh.md) | Ai đang chủ động và phía đối diện có hấp thụ được không? |
+| 4 | [Thực thi lệnh của tổ chức](market_dynamic_phan_4-thuc_thi_lenh_to_chuc.md) | Một tổ chức giao dịch size lớn mà không tự làm xấu giá như thế nào? |
+| 5 | [Cấu trúc thị trường và hành động giá](market_dynamic_phan_5-cau_truc_thi_truong-hanh_dong_gia.md) | Các cơ chế đã học để lại dấu vết gì trên biểu đồ? |
+| 6 | [Wyckoff](market_dynamic_phan_6-wyckoff.md) | Có thể suy luận chuyển giao vị thế từ giá–volume–structure đến mức nào? |
+
+## Bài kiểm tra đầu vào
+
+Hãy trả lời trước khi học Phần 1. Không cần tra cứu và không cần cố trả lời bằng thuật ngữ chuyên môn. Mục tiêu là lưu lại mô hình tư duy ban đầu của bạn.
+
+1. Giá tăng có nhất thiết vì số người mua nhiều hơn số người bán không? Vì sao?
+2. Volume cao có đồng nghĩa thị trường đang có thanh khoản tốt không?
+3. Nếu volume bán rất lớn nhưng giá gần như đứng yên, ít nhất ba cơ chế nào có thể giải thích?
+4. Một vùng đi ngang có chứng minh tổ chức đang gom hàng không?
+5. Một mô hình giá là nguyên nhân làm giá vận động hay là dấu vết của cơ chế khác?
+6. Khi giá vượt đỉnh cũ rồi quay xuống, ta quan sát được điều gì và phần nào chỉ là suy luận?
+7. Bằng chứng nào sẽ khiến bạn từ bỏ một nhận định thị trường mà ban đầu bạn rất tin?
+
+### Cách sử dụng bài kiểm tra
+
+- Viết câu trả lời ngắn trước khi bắt đầu khóa học.
+- Không xem đây là bài thi đúng/sai; nó là ảnh chụp cách bạn đang suy luận.
+- Sau mỗi Gate, quay lại sửa những câu liên quan.
+- Sau Phần 6, trả lời lại toàn bộ mà không xem câu cũ.
+- So sánh xem câu trả lời mới có thêm mechanism, alternatives, evidence và falsification hay chưa.
+
+```text
+CÂU TRẢ LỜI BAN ĐẦU
+        ↓ học từng phần + vượt Gate
+CÂU TRẢ LỜI CÓ THÊM CƠ CHẾ VÀ BẰNG CHỨNG
+        ↓ cuối khóa
+TỰ GIẢI THÍCH + TỰ PHẢN BIỆN + TỰ CẬP NHẬT
+```
+
+**Cách đọc:** tiến bộ không được đo bằng số thuật ngữ nhớ được, mà bằng chất lượng chuỗi nhân quả, số giả thuyết hợp lý và khả năng nói điều gì sẽ chứng minh mình sai.
+
+> **Ghi nhớ:** hãy giữ câu trả lời đầu khóa; đó là benchmark cho chính năng lực suy luận của bạn.
 
 ---
 
