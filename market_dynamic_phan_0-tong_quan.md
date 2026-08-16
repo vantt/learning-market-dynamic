@@ -14,10 +14,8 @@ Bài này không thay thế sáu phần của giáo trình. Nó là bản đồ 
 
 ### Trạng thái tài liệu hiện tại
 
-- **Đã có bài học hoàn chỉnh:** Phần 1 — Cấu trúc vi mô thị trường; Phần 2 — Thanh khoản.
-- **Đã có khung nội dung trong giáo trình, chưa phát triển thành bài riêng:** Phần 3 — Dòng lệnh; Phần 4 — Thực thi lệnh của tổ chức; Phần 5 — Cấu trúc thị trường và hành động giá; Phần 6 — Wyckoff.
-
-Vì vậy, các mục Phần 3–6 trong bài tổng quan này đóng vai trò định hướng: cho biết bạn sẽ học gì và vì sao kiến thức đó cần xuất hiện, không thay thế bài học chi tiết sẽ được xây dựng sau.
+- **Đã có bài học hoàn chỉnh:** Phần 1 — Cấu trúc vi mô thị trường; Phần 2 — Thanh khoản; Phần 3 — Dòng lệnh; Phần 4 — Thực thi lệnh của tổ chức; Phần 5 — Cấu trúc thị trường và hành động giá; Phần 6 — Wyckoff.
+- Mỗi bài có thể học độc lập, nhưng nên đi theo thứ tự vì đầu ra của phần trước là kiến thức đầu vào của phần sau.
 
 ## Thuật ngữ cần nắm trước
 
