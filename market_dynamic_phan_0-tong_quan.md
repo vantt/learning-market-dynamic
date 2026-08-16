@@ -42,17 +42,17 @@ Tin tức, yếu tố cơ bản, thị trường chung và ngành vẫn được
 
 ### Các khái niệm liên quan dễ nhầm
 
-| Khái niệm | Câu hỏi nó trả lời | Quan hệ với Market Dynamics |
-|---|---|---|
-| Market Microstructure | Lệnh được gửi, xếp và khớp ra sao? | Là tầng cơ chế nền tảng. |
-| Liquidity | Thị trường hấp thụ được bao nhiêu lệnh ở mức giá nào? | Là sức chứa và vật cản của chuyển động giá. |
-| Order Flow | Ai đang chủ động tiêu thụ thanh khoản? | Là lực đang tác động vào sức chứa đó. |
-| Market Structure | Chuỗi đỉnh, đáy, xu hướng và range hình thành thế nào? | Là dấu vết tích lũy của các tương tác trước. |
-| Price Action | Giá đang phản ứng và di chuyển ra sao? | Là lớp quan sát trực tiếp trên biểu đồ. |
-| Behavioral Finance | Thiên kiến và hành vi con người ảnh hưởng quyết định thế nào? | Giúp giải thích một phần động cơ và phản ứng. |
-| Market Dynamics | Toàn bộ các lực trên tương tác và thay đổi theo thời gian thế nào? | Là bức tranh liên kết các tầng thành một hệ thống. |
+| English term | Tên tiếng Việt | Câu hỏi khái niệm trả lời | Quan hệ với Market Dynamics |
+|---|---|---|---|
+| Market Microstructure | Cấu trúc vi mô thị trường | Lệnh được gửi, xếp và khớp ra sao? | Là tầng cơ chế nền tảng. |
+| Liquidity | Thanh khoản | Thị trường hấp thụ được bao nhiêu lệnh ở mức giá nào? | Là sức chứa và vật cản của chuyển động giá. |
+| Order Flow | Dòng lệnh | Ai đang chủ động tiêu thụ thanh khoản? | Là lực đang tác động vào sức chứa đó. |
+| Market Structure | Cấu trúc thị trường | Chuỗi đỉnh, đáy, xu hướng và vùng đi ngang hình thành thế nào? | Là dấu vết tích lũy của các tương tác trước. |
+| Price Action | Hành động giá | Giá đang phản ứng và di chuyển ra sao? | Là lớp quan sát trực tiếp trên biểu đồ. |
+| Behavioral Finance | Tài chính hành vi | Thiên kiến và hành vi con người ảnh hưởng quyết định thế nào? | Giúp giải thích một phần động cơ và phản ứng. |
+| Market Dynamics | Cơ chế vận động của thị trường | Toàn bộ các lực trên tương tác và thay đổi theo thời gian thế nào? | Là bức tranh liên kết các tầng thành một hệ thống. |
 
-Market Dynamics vì vậy **không đồng nghĩa** với Market Microstructure, Order Flow hoặc Price Action. Những khái niệm đó là các lớp khác nhau của cùng một hệ thống.
+**Cơ chế vận động của thị trường (Market Dynamics)** vì vậy không đồng nghĩa với **cấu trúc vi mô thị trường (Market Microstructure)**, **dòng lệnh (Order Flow)** hoặc **hành động giá (Price Action)**. Những khái niệm đó là các lớp khác nhau của cùng một hệ thống.
 
 ```text
 MICROSTRUCTURE  →  LIQUIDITY ↔ ORDER FLOW  →  PRICE ACTION
