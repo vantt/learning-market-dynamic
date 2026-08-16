@@ -43,7 +43,7 @@ Nhiều người quan sát vùng 100:
 
 - Người đang mua từ 98 đặt chốt lời quanh 100.
 - Người bán khống đặt stop-loss nếu giá vượt 100.2.
-- Người giao dịch breakout đặt buy stop nếu giá vượt 100.2.
+- Người giao dịch theo phá vỡ đặt **lệnh dừng mua (buy stop)** nếu giá vượt 100.2.
 - Người bán thụ động đặt limit sell quanh 100 vì cho rằng đây là kháng cự.
 - Một quỹ muốn mua 300,000 cổ phiếu nhưng không muốn đẩy giá quá nhanh.
 
@@ -74,23 +74,73 @@ Trước khi đọc tiếp, hãy tự hỏi:
 
 Bây giờ phân rã:
 
-- Ban đầu, vùng 100 có nhiều ask liquidity đang chờ.
+- Ban đầu, vùng 100 có nhiều **thanh khoản chào bán (ask liquidity)** đang chờ.
 - Lệnh mua chủ động tiêu thụ dần lượng chào bán tại 100.0, 100.1, 100.2, 100.3.
 - Khi 100.2 bị chạm hoặc vượt, một số buy stop có thể được kích hoạt.
 - Buy stop sau khi kích hoạt thường trở thành lệnh mua chủ động hoặc lệnh mua có khả năng khớp ngay.
-- Những lệnh mua mới này tiếp tục tiêu thụ ask liquidity.
+- Những lệnh mua mới này tiếp tục tiêu thụ thanh khoản chào bán.
 - Nếu giữa 100.3 và 100.8 có ít người bán, giá phải nhảy tới mức có người bán tiếp theo.
 - Nếu lực mua chỉ là tạm thời và người mua mới không tiếp tục, giá có thể quay xuống dưới 100.
+
+Hãy theo dõi toàn bộ 180,000 cổ phiếu mua chủ động đi qua từng tầng chào bán. Sơ đồ giả định ba lệnh mua đến liên tiếp và cộng lại thành một nhu cầu 180,000 cổ phiếu:
+
+```text
+TỔNG MUA CHỦ ĐỘNG: 40,000 + 60,000 + 80,000 = 180,000 CP
+                                ↓
+ASK 100.0 ── có 50,000 ── dùng hết 50,000 ── ✕ HẾT
+                                ↓ còn 130,000
+ASK 100.1 ── có 40,000 ── dùng hết 40,000 ── ✕ HẾT
+                                ↓ còn 90,000
+ASK 100.2 ── có 30,000 ── dùng hết 30,000 ── ✕ HẾT
+                                ↓ còn 60,000 + có thể kích hoạt buy stop
+ASK 100.3 ── có 20,000 ── dùng hết 20,000 ── ✕ HẾT
+                                ↓ còn 40,000; vùng giữa rất mỏng
+ASK 100.8 ── có 25,000 ── dùng hết 25,000 ── ✕ HẾT
+                                ↓ còn 15,000
+ASK 101.5 ── có 40,000 ── dùng 15,000 ────── ● CÒN 25,000
+                                ↓
+                             HOÀN TẤT
+                 GIÁ CUỐI = 101.5
+                 GIÁ TB   ≈ 100.325
+```
+
+**Cách đọc:** bắt đầu từ tổng nhu cầu mua ở trên và đi xuống. Mỗi lần một mức ask bị dùng hết mà lệnh vẫn còn, phần chưa khớp phải đi tới mức cao hơn. Mốc 100.2 còn có thể kích hoạt lệnh dừng mua, nhưng đó là khả năng cần dữ liệu xác nhận, không phải dữ kiện chắc chắn. Giá trung bình thấp hơn giá cuối vì phần lớn khối lượng đã khớp ở các mức thấp hơn.
+
+Phát biểu nhân quả chính xác: **khi lượng mua chủ động tích lũy vượt tổng thanh khoản chào bán gần nhất, phần lệnh còn lại phải tìm người bán ở giá xa hơn; nếu vùng trung gian mỏng và lệnh mua mới được kích hoạt, giá giao dịch có thể nhảy nhanh qua nhiều mức.**
+
+> **Ghi nhớ:** giá chạy nhanh khi lệnh còn nhiều nhưng đối ứng ở gần đã hết.
 
 Kết quả có thể là một trong hai:
 
 **Kịch bản 1 — Breakout tiếp diễn**
 
-**Ask liquidity quanh 100 bị hấp thụ → buy stops/breakout orders kích hoạt → lệnh mua mới xuất hiện → thanh khoản bán phía trên không đủ → giá mở rộng lên vùng cao hơn → người mua tiếp tục hấp thụ nhịp lùi**
+**Thanh khoản chào bán quanh 100 bị tiêu thụ → lệnh dừng mua/lệnh mua phá vỡ được kích hoạt → lệnh mua mới xuất hiện → thanh khoản bán phía trên không đủ → giá mở rộng lên vùng cao hơn → người mua tiếp tục hấp thụ nhịp lùi**
 
 **Kịch bản 2 — Liquidity sweep thất bại**
 
-**Giá vượt 100 → stops/breakout orders bị kích hoạt → lệnh mua mới bị hấp thụ bởi người bán lớn → không có cầu tiếp diễn → giá rơi lại dưới 100 → người mua breakout bị kẹt**
+**Giá vượt 100 → lệnh dừng/lệnh mua phá vỡ được kích hoạt → lệnh mua mới bị người bán lớn hấp thụ → không có cầu tiếp diễn → giá rơi lại dưới 100 → người mua theo phá vỡ bị kẹt**
+
+```text
+GIÁ CHẠM / VƯỢT 100.2
+          ↓
+BUY STOP + LỆNH MUA PHÁ VỠ CÓ THỂ KÍCH HOẠT
+          ↓
+LỆNH MUA CHỦ ĐỘNG MỚI ĐÁNH VÀO ASK
+          │
+     ┌────┴─────────────────────┐
+     │                          │
+ASK KHÔNG ĐỦ HẤP THỤ       SELLER BỔ SUNG / HẤP THỤ ĐỦ
+     │                          │
+GIÁ TÌM ASK CAO HƠN        LỰC MUA KHÔNG TẠO TIẾN TRIỂN
+     │                          │
+PHÁ VỠ CÓ THỂ TIẾP DIỄN    GIÁ RƠI LẠI DƯỚI VÙNG
+```
+
+**Cách đọc:** hai nhánh có cùng điểm khởi đầu và cùng xuất hiện lệnh mua mới. Điều phân biệt kết quả không phải việc stop đã kích hoạt, mà là phía bán có hấp thụ được lượng mua mới hay không và lực mua có tiếp diễn không.
+
+Vì vậy, **việc giá vượt một mốc chỉ tạo điều kiện xuất hiện lệnh mới; hướng đi sau đó phụ thuộc vào tương quan giữa lệnh chủ động mới và thanh khoản đối ứng được duy trì hoặc bổ sung.**
+
+> **Ghi nhớ:** cùng một điểm kích hoạt, khả năng hấp thụ quyết định tiếp diễn hay thất bại.
 
 Cùng một hành động giá ban đầu có thể dẫn tới hai cơ chế khác nhau. Vì vậy, bài học này không dạy “thấy quét thanh khoản thì làm gì”. Nó dạy cách hỏi:
 
@@ -160,25 +210,45 @@ Thanh khoản thường có nhiều chiều:
 - **Khả năng khớp ngay (Immediacy)**: có thể giao dịch nhanh không.
 - **Khả năng hồi phục (Resiliency)**: sau khi bị ăn mất, thanh khoản có quay lại nhanh không.
 
-Một thị trường thanh khoản tốt thường có spread hẹp, depth dày, giao dịch được nhanh, và sau cú lệnh lớn thanh khoản được bổ sung lại tương đối nhanh.
+Một thị trường thanh khoản tốt thường có chênh lệch mua-bán hẹp, độ sâu dày, giao dịch được nhanh, và sau cú lệnh lớn thanh khoản được bổ sung lại tương đối nhanh.
+
+Bốn chiều này trả lời bốn câu hỏi khác nhau, không thể thay thế cho nhau:
+
+```text
+                         THANH KHOẢN
+                              │
+          ┌───────────┬───────┴───────┬────────────┐
+          │           │               │            │
+      ĐỘ CHẶT       ĐỘ SÂU       KHỚP NGAY      HỒI PHỤC
+     Tightness      Depth        Immediacy      Resiliency
+          │           │               │            │
+   spread rộng?   có bao nhiêu?   nhanh với chi   bị ăn xong có
+      hay hẹp?    ở giá gần?      phí bao nhiêu?  quay lại không?
+```
+
+**Cách đọc:** bắt đầu từ khái niệm thanh khoản rồi tách sang bốn thuộc tính độc lập. Một thị trường có thể tốt ở một nhánh nhưng yếu ở nhánh khác; chẳng hạn spread hẹp nhưng depth rất mỏng.
+
+Phát biểu chính xác: **chỉ có thể đánh giá thanh khoản khi biết đồng thời khoảng giá giao dịch, khối lượng hấp thụ, chi phí khớp ngay và tốc độ bổ sung thanh khoản sau cú lệnh.**
+
+> **Ghi nhớ:** thanh khoản tốt phải gần, đủ, nhanh và có khả năng quay lại.
 
 ## Tầng 3 — First Principles
 
 Ở mức nền tảng, thanh khoản là quan hệ giữa:
 
-**Lệnh muốn giao dịch ngay (aggressive demand/supply) ↔ lệnh đang sẵn sàng làm đối ứng (resting liquidity) ↔ động cơ của người cung cấp thanh khoản ↔ rủi ro khi đứng đối diện**
+**Nhu cầu mua/bán ngay (aggressive demand/supply) ↔ lệnh đang chờ làm đối ứng (resting liquidity) ↔ động cơ của người cung cấp thanh khoản ↔ rủi ro khi đứng phía đối diện**
 
 Cụ thể:
 
-- Người muốn mua ngay cần ask liquidity.
-- Người muốn bán ngay cần bid liquidity.
-- Người cung cấp thanh khoản chấp nhận chờ, nhưng đòi được bù đắp bằng giá tốt hơn, spread, rebate, hoặc kỳ vọng có lợi.
-- Nếu rủi ro tăng, họ có thể rút lệnh, giảm size, hoặc đặt giá xa hơn.
-- Khi liquidity mỏng, cùng một lệnh chủ động tạo market impact lớn hơn.
+- Người muốn mua ngay cần thanh khoản chào bán.
+- Người muốn bán ngay cần thanh khoản chào mua.
+- Người cung cấp thanh khoản chấp nhận chờ, nhưng đòi được bù đắp bằng giá tốt hơn, chênh lệch mua-bán, khoản hoàn phí (rebate), hoặc kỳ vọng có lợi.
+- Nếu rủi ro tăng, họ có thể rút lệnh, giảm khối lượng, hoặc đặt giá xa hơn.
+- Khi thanh khoản mỏng, cùng một lệnh chủ động tạo tác động lên giá lớn hơn.
 
 Chuỗi nền tảng:
 
-**Participants → incentives/risk → limit orders → available liquidity → aggressive orders consume liquidity → price impact → new price**
+**Người tham gia → động cơ/rủi ro → lệnh giới hạn → thanh khoản khả dụng → lệnh chủ động tiêu thụ thanh khoản → tác động lên giá → giá mới**
 
 ## Thanh khoản không phải là gì?
 
@@ -199,11 +269,11 @@ Chuỗi nền tảng:
 
 Với lệnh mua chủ động:
 
-**Market buy orders → consume ask liquidity → ask liquidity gần nhất giảm → nếu chưa mua đủ thì khớp lên mức ask cao hơn → transaction price tăng → last price tăng**
+**Lệnh mua thị trường → tiêu thụ thanh khoản chào bán → lượng bán gần nhất giảm → nếu chưa mua đủ thì khớp lên mức chào bán cao hơn → giá giao dịch tăng → giá khớp gần nhất tăng**
 
 Với lệnh bán chủ động:
 
-**Market sell orders → consume bid liquidity → bid liquidity gần nhất giảm → nếu chưa bán đủ thì khớp xuống mức bid thấp hơn → transaction price giảm → last price giảm**
+**Lệnh bán thị trường → tiêu thụ thanh khoản chào mua → lượng mua gần nhất giảm → nếu chưa bán đủ thì khớp xuống mức chào mua thấp hơn → giá giao dịch giảm → giá khớp gần nhất giảm**
 
 Nhưng thanh khoản không chỉ là khối lượng tại best bid/best ask. Nó còn nằm ở:
 
@@ -231,9 +301,34 @@ Nếu bạn mua 50,000 cổ phiếu, thanh khoản ở 50.00 đủ. Giá ít d�
 
 Nếu bạn mua 350,000 cổ phiếu, bạn ăn qua 50.00, 50.05, 50.10 và còn phải đi xa hơn. Lúc này thị trường **không còn thanh khoản tốt cho size của bạn ở vùng giá gần**.
 
+Ví dụ này còn cho thấy một giới hạn quan trọng của dữ liệu sổ lệnh đang nhìn thấy:
+
+```text
+NHU CẦU MUA: 350,000 CP
+        ↓
+50.00 ── dùng 100,000 ── còn 250,000
+        ↓
+50.05 ── dùng 120,000 ── còn 130,000
+        ↓
+50.10 ── dùng  80,000 ── còn  50,000
+        ↓ khoảng giá rộng hơn
+50.50 ── dùng  10,000 ── còn  40,000
+        ↓
+51.00 ── dùng   5,000 ── còn  35,000
+        ↓
+VƯỢT PHẠM VI SỔ LỆNH ĐANG HIỂN THỊ
+→ chưa biết giá cuối và giá trung bình nếu không có thêm dữ liệu
+```
+
+**Cách đọc:** mỗi tầng trừ lượng bán có sẵn khỏi nhu cầu còn lại. Sau 51.00 vẫn thiếu 35,000 cổ phiếu, nên không được tự giả định lệnh hoàn tất hoặc tự đặt một mức giá khớp tiếp theo.
+
+Phát biểu chính xác: **khi nhu cầu lớn hơn tổng thanh khoản hiển thị, dữ liệu hiện có chỉ cho biết lệnh sẽ quét hết các mức đang thấy; giá cuối, giá trung bình và khả năng hoàn tất vẫn chưa xác định.**
+
+> **Ghi nhớ:** hết sổ lệnh nhìn thấy không có nghĩa là hết lệnh; nó có nghĩa là ta hết bằng chứng.
+
 Điểm cần nhớ:
 
-**Thanh khoản luôn phải gắn với size và giá.**
+**Thanh khoản luôn phải gắn với quy mô lệnh và mức giá.**
 
 Không có câu “cổ phiếu này thanh khoản” một cách tuyệt đối. Câu chính xác hơn là:
 
@@ -261,14 +356,35 @@ So sánh hai sổ lệnh:
 | 8,000 | 99.5 | 100.5 | 6,000 |
 | 10,000 | 98.5 | 101.5 | 7,000 |
 
-Cùng một market buy 50,000:
+Cùng một lệnh mua thị trường 50,000 cổ phiếu:
 
 - Ở sổ lệnh A, có thể khớp toàn bộ tại 100.0.
 - Ở sổ lệnh B, có thể quét qua 100.0, 100.5, 101.5 và vẫn chưa đủ.
 
 Kết luận:
 
-**Market impact không chỉ phụ thuộc size tuyệt đối của lệnh; nó phụ thuộc size tương đối so với depth khả dụng.**
+**Tác động lên giá (market impact) không chỉ phụ thuộc quy mô tuyệt đối của lệnh; nó phụ thuộc quy mô tương đối so với độ sâu khả dụng.**
+
+```text
+                    CÙNG MARKET BUY 50,000 CP
+                              │
+                ┌─────────────┴─────────────┐
+                │                           │
+          SỔ LỆNH A DÀY               SỔ LỆNH B MỎNG
+       ask gần: ███████████          ask gần: ██
+                │                           │
+      hấp thụ tại 100.0           quét 100.0 → 100.5 → 101.5
+                │                           │
+        tác động nhỏ hơn              vẫn có thể chưa đủ
+```
+
+*Thanh ký tự chỉ biểu thị độ lớn tương đối, không theo tỷ lệ chính xác.*
+
+**Cách đọc:** từ cùng một lệnh, đi theo nhánh tương ứng với độ sâu phía ask. Ở nhánh A, lượng bán gần nhất lớn hơn lệnh; ở nhánh B, tổng lượng bán đang thấy chỉ là 17,000 cổ phiếu, nên còn 33,000 chưa khớp sau mức 101.5.
+
+Phát biểu chính xác: **với cùng một lệnh mua, sổ lệnh càng mỏng và các mức ask càng cách xa nhau thì số tầng bị quét, trượt giá và phần lệnh chưa khớp càng lớn.**
+
+> **Ghi nhớ:** không hỏi lệnh lớn đến đâu; hãy hỏi nó lớn đến đâu so với độ sâu phía đối diện.
 
 ## 4.4 Khả năng khớp ngay (Immediacy)
 
@@ -287,13 +403,13 @@ Trong thị trường thanh khoản cao, immediacy rẻ hơn. Trong thị trư�
 
 Chuỗi nhân quả:
 
-**Nhu cầu khớp ngay tăng → lệnh chủ động tăng → resting liquidity bị tiêu thụ nhanh → nếu liquidity providers không bổ sung kịp → giá phải di chuyển xa hơn để tìm đối ứng**
+**Nhu cầu khớp ngay tăng → lệnh chủ động tăng → thanh khoản đang chờ bị tiêu thụ nhanh → nếu người cung cấp thanh khoản không bổ sung kịp → giá phải di chuyển xa hơn để tìm đối ứng**
 
 ## 4.5 Khả năng hồi phục thanh khoản (Resiliency)
 
-Thanh khoản không chỉ là “trước khi lệnh tới có bao nhiêu size”. Một câu hỏi quan trọng hơn:
+Thanh khoản không chỉ là “trước khi lệnh tới có bao nhiêu khối lượng”. Một câu hỏi quan trọng hơn:
 
-> Sau khi liquidity bị ăn mất, nó có quay lại không?
+> Sau khi thanh khoản bị tiêu thụ, nó có quay lại không?
 
 Ví dụ:
 
@@ -314,7 +430,7 @@ Giá có thể nhảy nhanh.
 
 Chuỗi:
 
-**Liquidity bị tiêu thụ → liquidity providers đánh giá lại rủi ro → nếu họ bổ sung lệnh gần giá cũ, giá ổn định hơn → nếu họ rút hoặc đặt xa hơn, giá mở rộng biên độ**
+**Thanh khoản bị tiêu thụ → người cung cấp thanh khoản đánh giá lại rủi ro → nếu họ bổ sung lệnh gần giá cũ, giá ổn định hơn → nếu họ rút hoặc đặt xa hơn, giá mở rộng biên độ**
 
 ---
 
@@ -323,6 +439,22 @@ Chuỗi:
 Đây là nhầm lẫn cực kỳ phổ biến.
 
 **Volume là thứ đã giao dịch. Liquidity là khả năng giao dịch tiếp theo.**
+
+```text
+KHỐI LƯỢNG GIAO DỊCH (VOLUME)       THANH KHOẢN (LIQUIDITY)
+              │                                  │
+       giao dịch ĐÃ xảy ra              khả năng hấp thụ lệnh MỚI
+              │                                  │
+       dấu vết quá khứ gần              trạng thái hiện tại, có thể đổi
+              │                                  │
+   không cho biết chắc phía nào       phải gắn với phía, giá, size, thời điểm
+```
+
+**Cách đọc:** hai cột trả lời hai câu hỏi khác nhau. Cột trái cho biết bao nhiêu tài sản đã đổi chủ; cột phải cho biết một lệnh mới có thể giao dịch gần giá hiện tại với chi phí nào.
+
+Phát biểu chính xác: **volume cao chỉ chứng minh nhiều giao dịch đã xảy ra; muốn kết luận thanh khoản tốt còn phải thấy spread hẹp, đủ depth đúng phía, slippage thấp và khả năng bổ sung lệnh.**
+
+> **Ghi nhớ:** volume nhìn lại giao dịch cũ; liquidity kiểm tra sức chứa cho lệnh kế tiếp.
 
 Volume nhìn về quá khứ gần. Liquidity liên quan đến khả năng hấp thụ lệnh ở hiện tại và tương lai rất gần.
 
@@ -456,6 +588,23 @@ Có thể có:
 - **Latent liquidity**: người chưa đặt lệnh nhưng sẽ tham gia nếu giá tới vùng họ quan tâm.
 - **Triggered liquidity**: lệnh xuất hiện sau khi điều kiện giá kích hoạt.
 
+```text
+                    THANH KHOẢN CÓ THỂ TIẾP CẬN
+                              │
+          ┌───────────┬───────┴────────┬────────────┐
+          │           │                │            │
+      NHÌN THẤY      ẨN MỘT PHẦN     TIỀM ẨN      ĐƯỢC KÍCH HOẠT
+       Visible         Hidden          Latent        Triggered
+          │           │                │            │
+    hiện trên sổ    iceberg/lệnh ẩn  chưa đặt lệnh  chờ giá chạm điều kiện
+```
+
+**Cách đọc:** bốn nhánh phân loại theo khả năng quan sát và thời điểm lệnh xuất hiện. Chỉ nhánh “nhìn thấy” được thể hiện đầy đủ ngay trên sổ lệnh; ba nhánh còn lại chỉ có thể quan sát một phần hoặc suy luận.
+
+Phát biểu chính xác: **độ sâu hiển thị là dữ kiện về lệnh đang công khai, nhưng tổng khả năng hấp thụ còn phụ thuộc vào lệnh ẩn, người sẽ tham gia khi giá phù hợp và lệnh chỉ xuất hiện sau kích hoạt.**
+
+> **Ghi nhớ:** sổ lệnh là ảnh chụp phần nổi, không phải toàn bộ sức chứa của thị trường.
+
 Vì vậy, sổ lệnh là bằng chứng quan trọng nhưng không phải bản đồ hoàn chỉnh của toàn bộ thanh khoản.
 
 ---
@@ -481,6 +630,29 @@ Quanh 100 có thể có:
 Khi giá tiến tới 100:
 
 **Giá tiến gần đỉnh cũ → nhiều actor có kế hoạch hành động quanh vùng đó → resting/triggered orders tập trung → giao dịch tăng → vùng này trở thành nơi kiểm tra khả năng hấp thụ**
+
+```text
+                         VÙNG ĐỈNH CŨ 100
+                                │
+       ┌────────────────────────┼────────────────────────┐
+       │                        │                        │
+LIMIT SELL / CHỐT LỜI     BUY STOP CỦA SHORT      LỆNH MUA PHÁ VỠ
+   thanh khoản bán         mua lại để thoát          mua khi xác nhận
+       │                        │                        │
+       └─────────────── LỆNH TẬP TRUNG ────────────────┘
+                                ↓ giá chạm vùng
+                     KIỂM TRA KHẢ NĂNG HẤP THỤ
+                         │                    │
+                  seller hấp thụ        ask bị tiêu thụ
+                         ↓                    ↓
+                  bị từ chối/đảo chiều   có thể phá vỡ tiếp
+```
+
+**Cách đọc:** các nhánh trên cùng là những loại lệnh khác nhau có thể cùng tập trung quanh 100. Khi giá tới vùng, kết quả tách làm hai theo việc thanh khoản bán hấp thụ được lực mua mới hay bị tiêu thụ.
+
+Phát biểu chính xác: **đỉnh cũ có thể quan trọng vì nhiều kế hoạch giao dịch hội tụ ở đó; phản ứng giá chỉ được quyết định khi các lệnh thực sự xuất hiện và tương tác, không phải vì bản thân đường giá có sức mạnh.**
+
+> **Ghi nhớ:** vùng giá chỉ là địa chỉ; lệnh và khả năng hấp thụ mới tạo ra phản ứng.
 
 Nếu ask liquidity tại 100 hấp thụ hết lực mua, giá có thể bị chặn.
 
@@ -558,6 +730,25 @@ Chuỗi:
 
 **Giá giảm tới stop level → stop-loss kích hoạt → sell orders mới xuất hiện → bid liquidity bị tiêu thụ → nếu bid không đủ, giá giảm tiếp → stop khác có thể kích hoạt**
 
+```text
+GIÁ HIỆN TẠI: 100
+       ↓ giá giảm
+════════════ STOP PRICE: 97 ════════════
+       ↓ điều kiện được chạm
+STOP ĐANG NGỦ → MARKET SELL / LIMIT SELL
+       ↓ nếu trở thành lệnh bán chủ động
+BID LIQUIDITY BỊ TIÊU THỤ
+       │
+       ├── BID ĐỦ       → giá được hấp thụ gần 97
+       └── BID KHÔNG ĐỦ → giá giảm tiếp → có thể kích hoạt stop khác
+```
+
+**Cách đọc:** lệnh stop không tham gia trước đường ranh giới 97. Sau khi giá chạm điều kiện, loại lệnh được sinh ra và độ dày bid quyết định việc giá ổn định hay tiếp tục giảm.
+
+Phát biểu chính xác: **stop chỉ khuếch đại chuyển động khi nó được kích hoạt thành lệnh có khả năng khớp ngay và thanh khoản phía đối diện không đủ hấp thụ; việc có stop không tự động làm giá giảm sâu.**
+
+> **Ghi nhớ:** stop là lệnh đang ngủ; trigger đánh thức nó; thanh khoản quyết định hậu quả.
+
 ## 8.2 Buy stop
 
 Buy stop thường xuất hiện trong hai trường hợp:
@@ -607,6 +798,29 @@ Chuỗi:
 Điểm quan trọng: sweep là mô tả hiện tượng và cơ chế có thể, không phải bằng chứng tự động về ý đồ thao túng.
 
 ## 9.1 Hai giả thuyết bắt buộc phải xét
+
+Hai giả thuyết dưới đây có thể tạo cùng một hình dạng giá nhưng khác hẳn về ý định:
+
+```text
+                    GIÁ ĐI QUA VÙNG CÓ NHIỀU STOP
+                                  │
+                 ┌────────────────┴────────────────┐
+                 │                                 │
+      CHỦ ĐỘNG TÌM THANH KHOẢN          DI CHUYỂN TỰ NHIÊN THEO LỆNH
+                 │                                 │
+ actor cần đối ứng để khớp size       imbalance ăn hết liquidity gần
+                 │                                 │
+ có yếu tố chiến lược/ý định          không cần giả định người “săn stop”
+                 └────────────────┬────────────────┘
+                                  ↓
+                     CẦN BẰNG CHỨNG PHÂN BIỆT
+```
+
+**Cách đọc:** bắt đầu từ cùng một dữ kiện ở trên rồi tách hai cách giải thích. Nhánh trái gán hành vi chiến lược nên đòi hỏi bằng chứng mạnh hơn; nhánh phải chỉ cần cơ chế khớp lệnh và mất cân bằng.
+
+Phát biểu chính xác: **việc giá đi qua vùng stop chứng minh vùng giá đã được giao dịch, nhưng không tự nó chứng minh một actor cố tình đưa giá tới đó.**
+
+> **Ghi nhớ:** sweep là hiện tượng quan sát; “săn stop” là giả thuyết về ý định.
 
 ### Giả thuyết A — Có người chủ động tìm thanh khoản
 
@@ -693,6 +907,26 @@ Ví dụ phía bid:
 | 97.5 | 10,000 |
 
 Market sell 15,000 có thể làm giá khớp từ 100 xuống 97.5.
+
+```text
+MARKET SELL: 15,000 CP
+        ↓
+BID 100.0 ── dùng 5,000 ── còn 10,000 ── ✕ HẾT
+        ↓
+BID  99.8 ── dùng 3,000 ── còn  7,000 ── ✕ HẾT
+        ↓ khoảng giá rộng
+BID  99.0 ── dùng 4,000 ── còn  3,000 ── ✕ HẾT
+        ↓ khoảng giá rất rộng
+BID  97.5 ── dùng 3,000 ── hoàn tất
+        ↓
+GIÁ CUỐI = 97.5     GIÁ TB ≈ 99.193
+```
+
+**Cách đọc:** lệnh bán đi từ bid cao nhất xuống thấp hơn. Mỗi mức bị dùng hết vì lượng bán còn lại lớn hơn lượng mua đang chờ. Khoảng cách lớn giữa 99.0 và 97.5 làm giá cuối giảm mạnh dù chỉ 3,000 cổ phiếu khớp ở mức cuối.
+
+Phát biểu nhân quả chính xác: **khi market sell lớn hơn tổng bid gần nhất và các mức bid cách xa nhau, phần lệnh còn lại phải bán xuống giá thấp hơn, khiến last price giảm mạnh hơn giá khớp trung bình.**
+
+> **Ghi nhớ:** vacuum không cần lực cực lớn; nó cần quá ít đối ứng ở giữa.
 
 Không cần một “dòng tiền bán khổng lồ”. Chỉ cần lệnh bán lớn hơn lượng bid mỏng gần nhất.
 
@@ -941,6 +1175,22 @@ Hiện tượng:
 
 > Giá ABC vượt đỉnh 100, lên 101.2 rất nhanh, volume tăng mạnh, rồi đóng cửa ở 100.8.
 
+```text
+                   VƯỢT 100 → 101.2 → ĐÓNG 100.8
+                                  │
+       ┌──────────────┬───────────┼───────────┬──────────────┐
+       │              │           │           │              │
+ PHÁ VỠ THẬT      SWEEP THẤT BẠI  SỔ MỎNG   ĐỊNH GIÁ LẠI   SHORT COVERING
+       │              │           │           │              │
+ cần tiếp diễn     cần dấu hấp thụ  cần depth  cần catalyst  cần bối cảnh vị thế
+```
+
+**Cách đọc:** hiện tượng trên cùng chỉ là dữ kiện đầu vào. Mỗi nhánh là một cơ chế cạnh tranh và có một loại bằng chứng phân biệt riêng; các nhánh cũng có thể cùng đóng góp.
+
+Phát biểu chính xác: **một đường giá không xác định duy nhất nguyên nhân; ta chỉ tăng xác suất cho một giả thuyết khi quan sát được dấu vết mà giả thuyết đó dự báo tốt hơn các nhánh còn lại.**
+
+> **Ghi nhớ:** đừng chọn câu chuyện trước; hãy chọn bằng chứng có sức phân biệt.
+
 | Giả thuyết (Hypothesis) | Cơ chế (Mechanism) | Bằng chứng ủng hộ | Bằng chứng chống lại | Nếu đúng, tiếp theo nên thấy gì? |
 |---|---|---|---|---|
 | Breakout thật | Ask liquidity quanh 100 bị hấp thụ; buy stops và demand mới tiếp tục đẩy giá | Giá giữ trên 100; nhịp lùi nông; volume tiếp diễn; sector ủng hộ | Giá quay lại dưới 100 nhanh; không có follow-through | Giá tiếp tục tìm vùng đối ứng cao hơn hoặc retest 100 thành công |
@@ -1053,6 +1303,21 @@ Khái niệm liquidity hữu ích để hiểu nơi giá có thể phản ứng 
 ---
 
 # 18. FACT → INFERENCE → STORY
+
+```text
+FACT / DỮ KIỆN              INFERENCE / SUY LUẬN             STORY / CÂU CHUYỆN
+       │                              │                               │
+giá, volume, spread, depth    stop có thể đã kích hoạt       “cá mập cố tình quét”
+       │                      seller có thể đã hấp thụ        “MM đang điều khiển giá”
+       │                              │                               │
+QUAN SÁT TRỰC TIẾP              CẦN KIỂM CHỨNG                 GÁN Ý ĐỊNH SÂU
+```
+
+**Cách đọc:** đi từ trái sang phải, độ chắc chắn giảm khi khoảng cách với dữ liệu tăng. Một suy luận hợp lý vẫn chưa phải dữ kiện; câu chuyện về danh tính hoặc ý định cần bằng chứng mạnh hơn nữa.
+
+Phát biểu chính xác: **dữ liệu có thể xác nhận giá đã vượt vùng và thanh khoản hiển thị đã đổi, nhưng việc stop tồn tại, ai hấp thụ và họ có chủ ý gì thường chỉ được suy luận với xác suất.**
+
+> **Ghi nhớ:** thấy gì nói nấy; suy thêm phải gắn nhãn; gán ý định phải có bằng chứng.
 
 ## Ví dụ 1
 
@@ -1337,6 +1602,22 @@ Liquidity nói về **khả năng hấp thụ**. Order flow nói về **ai đang
 
 **Participants → Incentives → Orders → Order Book → Liquidity → Order Flow → Imbalance/Absorption → Price Discovery → Price & Volume → Market Structure → Wyckoff/Market Hypotheses**
 
+```text
+PHẦN TRƯỚC / UPSTREAM           PHẦN 2 — THANH KHOẢN           PHẦN SAU / DOWNSTREAM
+
+NGƯỜI THAM GIA                   LỆNH ĐANG CHỜ                 DÒNG LỆNH CHỦ ĐỘNG
+       ↓                              +                               ↓
+ĐỘNG CƠ / RỦI RO                LỆNH ĐƯỢC KÍCH HOẠT           MẤT CÂN BẰNG / HẤP THỤ
+       ↓                              ↓                               ↓
+LỆNH → SỔ LỆNH              KHẢ NĂNG HẤP THỤ THEO GIÁ        KHÁM PHÁ GIÁ → PRICE ACTION
+```
+
+**Cách đọc:** cột trái giải thích thanh khoản được tạo ra từ đâu; cột giữa là nội dung Phần 2; cột phải cho thấy thanh khoản trở thành vật cản mà dòng lệnh ở Phần 3 sẽ tác động vào.
+
+Phát biểu nhân quả: **động cơ và rủi ro tạo ra lệnh đang chờ hoặc lệnh có điều kiện; chúng quyết định khả năng hấp thụ; dòng lệnh chủ động tương tác với khả năng đó để tạo mất cân bằng, khám phá giá và hành động giá quan sát được.**
+
+> **Ghi nhớ:** Phần 2 học sức chứa của thị trường; Phần 3 học dòng lệnh đang sử dụng sức chứa đó.
+
 Phần 2 chủ yếu bao phủ:
 
 **Orders → Resting/Triggered Liquidity → Liquidity Pools → Sweeps/Vacuums → Price Discovery**
@@ -1366,16 +1647,11 @@ Các câu này thiếu cơ chế. Để đạt chuẩn, phải nói rõ:
 
 ## 1. Tóm tắt theo First Principles
 
-1. Thanh khoản là khả năng hấp thụ lệnh mà không làm giá dịch chuyển quá mạnh.
-2. Volume là khối lượng đã giao dịch; liquidity là khả năng giao dịch tiếp theo tại hoặc gần giá hiện tại.
-3. Liquidity phải luôn gắn với size, giá, thời điểm và phía giao dịch.
-4. Resting liquidity nằm ở lệnh giới hạn đang chờ; triggered liquidity xuất hiện khi điều kiện giá kích hoạt.
-5. Liquidity pools hình thành quanh vùng nhiều người cùng quan sát và đặt kế hoạch giao dịch.
-6. Stops có thể biến vùng giá thành nơi xuất hiện lệnh chủ động mới.
-7. Liquidity sweep mô tả việc giá đi qua vùng có nhiều lệnh; nó không tự động chứng minh thao túng.
-8. Liquidity vacuum khiến giá chạy nhanh vì thiếu đối ứng ở vùng trung gian.
-9. Price discovery là quá trình lệnh tiêu thụ liquidity, tạo imbalance, rồi tìm mức giá mới có đủ đối ứng.
-10. Mọi kết luận về liquidity phải tách dữ kiện, suy luận và câu chuyện.
+1. Thanh khoản là khả năng hấp thụ một lệnh cụ thể, ở một phía và thời điểm cụ thể, mà không làm giá dịch chuyển quá mạnh.
+2. Khối lượng giao dịch (volume) là lượng đã khớp; thanh khoản là sức chứa cho lệnh tiếp theo, gồm độ chặt, độ sâu, khả năng khớp ngay và khả năng hồi phục.
+3. Thanh khoản đang chờ nằm trong lệnh giới hạn; thanh khoản được kích hoạt xuất hiện khi điều kiện giá làm lệnh dừng hoặc lệnh có điều kiện trở nên hoạt động.
+4. Giá chạy nhanh khi lệnh chủ động vượt khả năng hấp thụ gần nhất, đặc biệt trong khoảng trống thanh khoản hoặc khi nhiều lệnh cùng được kích hoạt.
+5. Quét thanh khoản mô tả hiện tượng giá đi qua vùng tập trung lệnh; mọi kết luận về ý định phải được kiểm chứng bằng dữ kiện, giả thuyết cạnh tranh và điều kiện bác bỏ.
 
 ## 2. Mô hình tư duy (Mental Model)
 
