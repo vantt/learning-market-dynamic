@@ -32,6 +32,46 @@ Phát biểu nhân quả: **khi mục tiêu và ràng buộc của người tham
 
 > **Ghi nhớ:** Market Dynamics đi tìm chuỗi nguyên nhân từ con người và lệnh đến những gì ta nhìn thấy trên biểu đồ.
 
+### Mối quan hệ giữa Market Dynamics, Market Microstructure và Market Structure
+
+Ba khái niệm này mô tả thị trường ở ba phạm vi khác nhau:
+
+- **Cơ chế vận động của thị trường (Market Dynamics):** bức tranh tổng thể về cách người tham gia, thông tin, kỳ vọng, lệnh và thanh khoản tương tác để làm thị trường thay đổi theo thời gian.
+- **Cấu trúc vi mô thị trường (Market Microstructure):** cơ chế cụ thể biến lệnh mua bán thành giao dịch và sự thay đổi của giá.
+- **Cấu trúc thị trường (Market Structure):** hình dạng giá được tạo ra qua thời gian, thể hiện qua đỉnh, đáy, xu hướng, vùng đi ngang và phá vỡ.
+
+Hãy hình dung ba khái niệm như ba độ rộng của cùng một hệ thống:
+
+```text
+MARKET DYNAMICS
+CƠ CHẾ VẬN ĐỘNG CỦA THỊ TRƯỜNG
+Các lực và hành vi làm toàn bộ thị trường vận động
+                 ↓ biểu hiện qua
+MARKET MICROSTRUCTURE
+CẤU TRÚC VI MÔ THỊ TRƯỜNG
+Lệnh tương tác với thanh khoản và tạo giao dịch
+                 ↓ tích lũy thành
+MARKET STRUCTURE
+CẤU TRÚC THỊ TRƯỜNG
+Kết quả được thể hiện thành cấu trúc trên biểu đồ
+```
+
+**Cách đọc:** bắt đầu từ Market Dynamics ở trên, là phạm vi rộng nhất. Market Microstructure nằm bên trong và giải thích cơ chế cấp lệnh–giao dịch. Khi các giao dịch lặp lại theo thời gian, kết quả được ghi lại thành Market Structure trên biểu đồ.
+
+Phát biểu nhân quả: **các lực thuộc Market Dynamics làm người tham gia thay đổi lệnh và thanh khoản; Market Microstructure biến những thay đổi đó thành giao dịch và giá; chuỗi giá tích lũy theo thời gian tạo thành Market Structure.**
+
+Có thể ghi nhớ ngắn gọn:
+
+```text
+MARKET DYNAMICS       = TOÀN BỘ HỆ THỐNG VẬN ĐỘNG
+MARKET MICROSTRUCTURE = CƠ CHẾ TẠO RA GIAO DỊCH VÀ GIÁ
+MARKET STRUCTURE      = DẤU VẾT ĐỂ LẠI TRÊN BIỂU ĐỒ
+```
+
+**Lưu ý:** đây là mô hình đơn giản để định vị khái niệm, không phải chuỗi một chiều tuyệt đối. Trong thực tế, cấu trúc giá mới lại tác động đến kỳ vọng, vị thế và hành vi của người tham gia, tạo thành một vòng phản hồi liên tục.
+
+> **Ghi nhớ:** Dynamics là toàn cảnh, Microstructure là cơ chế vận hành, Structure là dấu vết quan sát được.
+
 ### Phạm vi của Market Dynamics trong khóa học này
 
 “Market Dynamics” là một khái niệm rộng. Nó có thể bao gồm kinh tế vĩ mô, định giá, chính sách tiền tệ, tâm lý, cấu trúc ngành và nhiều lực khác. Khóa học này tập trung vào một phạm vi cụ thể:
