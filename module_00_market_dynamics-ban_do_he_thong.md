@@ -1,4 +1,4 @@
-# Market Dynamics từ First Principles — Từ lệnh và thanh khoản đến cấu trúc giá và Wyckoff
+# Module 0 — Market Dynamics / Bản đồ hệ thống
 
 ## Market Dynamics là gì?
 
@@ -40,6 +40,8 @@ Ba khái niệm này mô tả thị trường ở ba phạm vi khác nhau:
 - **Cấu trúc vi mô thị trường (Market Microstructure):** cơ chế cụ thể biến lệnh mua bán thành giao dịch và sự thay đổi của giá.
 - **Cấu trúc thị trường (Market Structure):** hình dạng giá được tạo ra qua thời gian, thể hiện qua đỉnh, đáy, xu hướng, vùng đi ngang và phá vỡ.
 
+Vì vậy, ba khái niệm này **không ngang hàng theo nghĩa cùng một cấp phân loại**. **Market Dynamics** là khái niệm bao trùm: nó mô tả toàn bộ hệ thống thị trường đang vận động. **Market Microstructure** là một lớp cơ chế bên trong hệ thống đó, giải thích cách lệnh tương tác với thanh khoản để tạo giao dịch và giá. **Market Structure** là lớp kết quả quan sát được, tức dấu vết mà chuỗi giao dịch để lại trên biểu đồ theo thời gian.
+
 Hãy hình dung ba khái niệm như ba độ rộng của cùng một hệ thống:
 
 ```text
@@ -56,7 +58,7 @@ CẤU TRÚC THỊ TRƯỜNG
 Kết quả được thể hiện thành cấu trúc trên biểu đồ
 ```
 
-**Cách đọc:** bắt đầu từ Market Dynamics ở trên, là phạm vi rộng nhất. Market Microstructure nằm bên trong và giải thích cơ chế cấp lệnh–giao dịch. Khi các giao dịch lặp lại theo thời gian, kết quả được ghi lại thành Market Structure trên biểu đồ.
+**Cách đọc:** bắt đầu từ Market Dynamics ở trên, là phạm vi rộng nhất. Market Microstructure nằm bên trong Market Dynamics và giải thích cơ chế cấp lệnh–giao dịch. Khi các giao dịch lặp lại theo thời gian, kết quả được ghi lại thành Market Structure trên biểu đồ.
 
 Phát biểu nhân quả: **các lực thuộc Market Dynamics làm người tham gia thay đổi lệnh và thanh khoản; Market Microstructure biến những thay đổi đó thành giao dịch và giá; chuỗi giá tích lũy theo thời gian tạo thành Market Structure.**
 
@@ -196,18 +198,18 @@ Phát biểu nhân quả: **một institutional program kéo dài nhiều ngày 
 
 **Từ một ý định mua/bán, bằng cách nào thị trường tạo ra giá, khối lượng, cấu trúc biểu đồ và cuối cùng là một giả thuyết có thể kiểm chứng?**
 
-Bài này không thay thế sáu phần của giáo trình. Nó là bản đồ giúp bạn biết:
+Bài này không thay thế sáu module của giáo trình. Nó là bản đồ giúp bạn biết:
 
 - Toàn khóa đang giải quyết vấn đề gì.
-- Vì sao các phần phải học theo thứ tự.
-- Mỗi phần nhận kiến thức gì từ phần trước.
-- Mỗi phần bổ sung một mắt xích nào vào chuỗi nhân quả.
-- Khi nào bạn thực sự sẵn sàng chuyển sang phần tiếp theo.
+- Vì sao các module phải học theo thứ tự.
+- Mỗi module nhận kiến thức gì từ module trước.
+- Mỗi module bổ sung một mắt xích nào vào chuỗi nhân quả.
+- Khi nào bạn thực sự sẵn sàng chuyển sang module tiếp theo.
 
 ### Trạng thái tài liệu hiện tại
 
-- **Đã có bài học hoàn chỉnh:** Phần 1 — Cấu trúc vi mô thị trường; Phần 2 — Thanh khoản; Phần 3 — Dòng lệnh; Phần 4 — Thực thi lệnh của tổ chức; Phần 5 — Cấu trúc thị trường và hành động giá; Phần 6 — Wyckoff.
-- Mỗi bài có thể học độc lập, nhưng nên đi theo thứ tự vì đầu ra của phần trước là kiến thức đầu vào của phần sau.
+- **Đã có module hoàn chỉnh:** Module 1 — Cấu trúc vi mô thị trường; Module 2 — Thanh khoản; Module 3 — Dòng lệnh; Module 4 — Thực thi lệnh của tổ chức; Module 5 — Cấu trúc thị trường và hành động giá; Module 6 — Wyckoff.
+- Mỗi module có thể học độc lập, nhưng nên đi theo thứ tự vì đầu ra của module trước là kiến thức đầu vào của module sau.
 
 ## Thuật ngữ cần nắm trước
 
@@ -225,28 +227,28 @@ Bài này không thay thế sáu phần của giáo trình. Nó là bản đồ 
 | Falsification | Điều kiện bác bỏ | Bằng chứng khiến một giả thuyết yếu đi hoặc sai. |
 | Wyckoff | Khung Wyckoff | Khung giả thuyết về cung, cầu và chuyển giao vị thế; không phải sơ đồ đọc chắc ý định “cá mập”. |
 
-## Đi tới bài học
+## Đi tới module
 
 | Thứ tự | Bài học | Câu hỏi trung tâm |
 |---:|---|---|
-| 0 | **Market Dynamics từ First Principles** — bài hiện tại | Toàn bộ các tầng liên kết với nhau như thế nào? |
-| 1 | [Cấu trúc vi mô thị trường](market_dynamic_phan_1-market_microstructure.md) | Một lệnh biến thành giao dịch và giá bằng cách nào? |
-| 2 | [Thanh khoản](market_dynamic_phan_2-thanh_khoan.md) | Thị trường hấp thụ được bao nhiêu lệnh trước khi giá phải đi xa? |
-| 3 | [Dòng lệnh](market_dynamic_phan_3-dong_lenh.md) | Ai đang chủ động và phía đối diện có hấp thụ được không? |
-| 4 | [Thực thi lệnh của tổ chức](market_dynamic_phan_4-thuc_thi_lenh_to_chuc.md) | Một tổ chức giao dịch size lớn mà không tự làm xấu giá như thế nào? |
-| 5 | [Cấu trúc thị trường và hành động giá](market_dynamic_phan_5-cau_truc_thi_truong-hanh_dong_gia.md) | Các cơ chế đã học để lại dấu vết gì trên biểu đồ? |
-| 6 | [Wyckoff](market_dynamic_phan_6-wyckoff.md) | Có thể suy luận chuyển giao vị thế từ giá–volume–structure đến mức nào? |
+| 0 | **Market Dynamics / Bản đồ hệ thống** — module hiện tại | Toàn bộ các tầng liên kết với nhau như thế nào? |
+| 1 | [Cấu trúc vi mô thị trường](module_01_tang_co_che-market_microstructure.md) | Một lệnh biến thành giao dịch và giá bằng cách nào? |
+| 2 | [Thanh khoản](module_02_tang_suc_chua-thanh_khoan.md) | Thị trường hấp thụ được bao nhiêu lệnh trước khi giá phải đi xa? |
+| 3 | [Dòng lệnh](module_03_tang_ap_luc_lenh-dong_lenh.md) | Ai đang chủ động và phía đối diện có hấp thụ được không? |
+| 4 | [Thực thi lệnh của tổ chức](module_04_tang_thuc_thi-lenh_to_chuc.md) | Một tổ chức giao dịch khối lượng lớn mà không làm giá khớp của chính mình xấu đi như thế nào? |
+| 5 | [Cấu trúc thị trường và hành động giá](module_05_tang_quan_sat-cau_truc_thi_truong_va_hanh_dong_gia.md) | Các cơ chế đã học để lại dấu vết gì trên biểu đồ? |
+| 6 | [Wyckoff](module_06_tang_dien_giai-wyckoff_gia_thuyet.md) | Có thể suy luận chuyển giao vị thế từ giá–volume–structure đến mức nào? |
 
 ## Bài kiểm tra đầu vào
 
-Hãy trả lời trước khi học Phần 1. Không cần tra cứu và không cần cố trả lời bằng thuật ngữ chuyên môn. Mục tiêu là lưu lại mô hình tư duy ban đầu của bạn.
+Hãy trả lời trước khi học Module 1. Không cần tra cứu và không cần cố trả lời bằng thuật ngữ chuyên môn. Mục tiêu là lưu lại mô hình tư duy ban đầu của bạn.
 
 1. Giá tăng có nhất thiết vì số người mua nhiều hơn số người bán không? Vì sao?
 2. Volume cao có đồng nghĩa thị trường đang có thanh khoản tốt không?
 3. Nếu volume bán rất lớn nhưng giá gần như đứng yên, ít nhất ba cơ chế nào có thể giải thích?
 4. Một vùng đi ngang có chứng minh tổ chức đang gom hàng không?
 5. Một mô hình giá là nguyên nhân làm giá vận động hay là dấu vết của cơ chế khác?
-6. Khi giá vượt đỉnh cũ rồi quay xuống, ta quan sát được điều gì và phần nào chỉ là suy luận?
+6. Khi giá vượt đỉnh cũ rồi quay xuống, đâu là điều quan sát được và đâu chỉ là suy luận?
 7. Bằng chứng nào sẽ khiến bạn từ bỏ một nhận định thị trường mà ban đầu bạn rất tin?
 
 ### Cách sử dụng bài kiểm tra
@@ -254,12 +256,12 @@ Hãy trả lời trước khi học Phần 1. Không cần tra cứu và không 
 - Viết câu trả lời ngắn trước khi bắt đầu khóa học.
 - Không xem đây là bài thi đúng/sai; nó là ảnh chụp cách bạn đang suy luận.
 - Sau mỗi Gate, quay lại sửa những câu liên quan.
-- Sau Phần 6, trả lời lại toàn bộ mà không xem câu cũ.
+- Sau Module 6, trả lời lại toàn bộ mà không xem câu cũ.
 - So sánh xem câu trả lời mới có thêm mechanism, alternatives, evidence và falsification hay chưa.
 
 ```text
 CÂU TRẢ LỜI BAN ĐẦU
-        ↓ học từng phần + vượt Gate
+        ↓ học từng module + vượt Gate
 CÂU TRẢ LỜI CÓ THÊM CƠ CHẾ VÀ BẰNG CHỨNG
         ↓ cuối khóa
 TỰ GIẢI THÍCH + TỰ PHẢN BIỆN + TỰ CẬP NHẬT
@@ -297,35 +299,35 @@ Phát biểu nhân quả: **người tham gia tạo lệnh; lệnh tương tác 
 
 ---
 
-# 2. Sáu phần không phải sáu “môn” độc lập
+# 2. Sáu module không phải sáu “môn” độc lập
 
-Mỗi phần trả lời một câu hỏi mà phần trước vừa làm xuất hiện.
+Mỗi module trả lời một câu hỏi mà module trước vừa làm xuất hiện.
 
 ```text
-PHẦN 1 — LỆNH BIẾN THÀNH GIÁ NHƯ THẾ NÀO?
+MODULE 1 — LỆNH BIẾN THÀNH GIÁ NHƯ THẾ NÀO?
                      ↓ xuất hiện câu hỏi: thị trường hấp thụ được bao nhiêu?
-PHẦN 2 — THANH KHOẢN NẰM Ở ĐÂU VÀ DÀY/MỎNG RA SAO?
+MODULE 2 — THANH KHOẢN NẰM Ở ĐÂU VÀ DÀY/MỎNG RA SAO?
                      ↓ xuất hiện câu hỏi: ai đang tiêu thụ nó?
-PHẦN 3 — DÒNG LỆNH NÀO ĐANG CHỦ ĐỘNG, AI ĐANG HẤP THỤ?
+MODULE 3 — DÒNG LỆNH NÀO ĐANG CHỦ ĐỘNG, AI ĐANG HẤP THỤ?
                      ↓ xuất hiện câu hỏi: người có lệnh rất lớn thực thi thế nào?
-PHẦN 4 — TỔ CHỨC CHIA NHỎ VÀ TỐI ƯU LỆNH RA SAO?
+MODULE 4 — TỔ CHỨC CHIA NHỎ VÀ TỐI ƯU LỆNH RA SAO?
                      ↓ xuất hiện câu hỏi: các quá trình này để lại cấu trúc gì?
-PHẦN 5 — DẤU VẾT ĐÓ TRỞ THÀNH XU HƯỚNG, RANGE, BREAKOUT THẾ NÀO?
+MODULE 5 — DẤU VẾT ĐÓ TRỞ THÀNH XU HƯỚNG, RANGE, BREAKOUT THẾ NÀO?
                      ↓ xuất hiện câu hỏi: có thể tổ chức dấu vết thành khung giả thuyết nào?
-PHẦN 6 — WYCKOFF GIẢI THÍCH CHUYỂN GIAO VỊ THẾ ĐẾN MỨC NÀO?
+MODULE 6 — WYCKOFF GIẢI THÍCH CHUYỂN GIAO VỊ THẾ ĐẾN MỨC NÀO?
 ```
 
-**Cách đọc:** câu hỏi ở cuối mỗi phần là đầu vào của phần kế tiếp. Nếu chưa trả lời được câu hỏi của phần trước, thuật ngữ ở phần sau dễ biến thành nhãn dán lên biểu đồ thay vì hiểu biết cơ chế.
+**Cách đọc:** câu hỏi ở cuối mỗi module là đầu vào của module kế tiếp. Nếu chưa trả lời được câu hỏi của module trước, thuật ngữ ở module sau dễ biến thành nhãn dán lên biểu đồ thay vì hiểu biết cơ chế.
 
 Phát biểu nhân quả: **thứ tự học là thứ tự phụ thuộc kiến thức: không thể hiểu ai hấp thụ dòng lệnh nếu chưa hiểu thanh khoản, và không thể đánh giá Wyckoff nếu chưa hiểu cách lệnh lớn, dòng lệnh và cấu trúc giá liên kết với nhau.**
 
-> **Ghi nhớ:** mỗi phần là câu trả lời cho vấn đề mà phần trước chưa giải quyết hết.
+> **Ghi nhớ:** mỗi module là câu trả lời cho vấn đề mà module trước chưa giải quyết hết.
 
 ---
 
-# 3. Vai trò và đầu ra của từng phần
+# 3. Vai trò và đầu ra của từng module
 
-## Phần 1 — Cấu trúc vi mô thị trường (Market Microstructure)
+## Module 1 — Cấu trúc vi mô thị trường (Market Microstructure)
 
 ### Câu hỏi phải trả lời
 
@@ -360,13 +362,13 @@ Phát biểu nhân quả: **khi lệnh chủ động tiêu thụ hết lượng 
 
 > **Đầu ra năng lực:** giải thích “tại sao giá tăng/giảm?” mà không dùng mô hình giá hay chỉ báo.
 
-### Mối nối sang Phần 2
+### Mối nối sang Module 2
 
-Phần 1 cho biết lệnh tiêu thụ lượng đối ứng. Phần 2 phải trả lời: **lượng đối ứng đó có bao nhiêu, nằm ở đâu và có quay lại không?**
+Module 1 cho biết lệnh tiêu thụ lượng đối ứng. Module 2 phải trả lời: **lượng đối ứng đó có bao nhiêu, nằm ở đâu và có quay lại không?**
 
 ---
 
-## Phần 2 — Thanh khoản (Liquidity)
+## Module 2 — Thanh khoản (Liquidity)
 
 ### Câu hỏi phải trả lời
 
@@ -402,13 +404,13 @@ Phát biểu nhân quả: **cùng một lệnh sẽ tạo tác động khác nha
 
 > **Đầu ra năng lực:** giải thích vì sao giá chạy nhanh sau khi vượt một vùng mà không mặc định “cá mập quét stop”.
 
-### Mối nối sang Phần 3
+### Mối nối sang Module 3
 
 Thanh khoản là sức chứa. Nhưng để biết sức chứa đang bị sử dụng như thế nào, cần nghiên cứu **dòng lệnh chủ động và phản ứng hấp thụ**.
 
 ---
 
-## Phần 3 — Dòng lệnh (Order Flow)
+## Module 3 — Dòng lệnh (Order Flow)
 
 ### Câu hỏi phải trả lời
 
@@ -446,13 +448,13 @@ Phát biểu nhân quả: **khi lệnh chủ động lớn nhưng giá không ti
 
 > **Đầu ra năng lực:** phân tích “volume tăng đột biến nhưng giá đứng yên” bằng nhiều giả thuyết cạnh tranh.
 
-### Mối nối sang Phần 4
+### Mối nối sang Module 4
 
 Nếu thấy dòng lệnh lặp lại hoặc được chia nhỏ, câu hỏi tiếp theo là: **một tổ chức có lệnh lớn phải thực thi ra sao để giảm chi phí và tránh lộ ý định?**
 
 ---
 
-## Phần 4 — Thực thi lệnh của tổ chức (Institutional Execution)
+## Module 4 — Thực thi lệnh của tổ chức (Institutional Execution)
 
 ### Câu hỏi phải trả lời
 
@@ -492,13 +494,13 @@ Phát biểu nhân quả: **quy mô vị thế lớn so với thanh khoản bu�
 
 > **Đầu ra năng lực:** giải thích hành vi có thể quan sát của quỹ lớn từ ràng buộc thực thi, không bắt đầu bằng câu chuyện thao túng.
 
-### Mối nối sang Phần 5
+### Mối nối sang Module 5
 
 Việc lệnh lớn được chia nhỏ, hấp thụ hoặc thất bại lặp lại theo thời gian sẽ để lại **đỉnh, đáy, xu hướng, vùng đi ngang, phá vỡ và nhịp lùi**.
 
 ---
 
-## Phần 5 — Cấu trúc thị trường và hành động giá
+## Module 5 — Cấu trúc thị trường và hành động giá
 
 ### Câu hỏi phải trả lời
 
@@ -534,13 +536,13 @@ Phát biểu nhân quả: **hỗ trợ, kháng cự và mô hình giá có ý ng
 
 > **Đầu ra năng lực:** giải thích một mô hình giá mà không cần gọi tên mô hình đó.
 
-### Mối nối sang Phần 6
+### Mối nối sang Module 6
 
 Khi đã đọc được giá + volume + structure bằng cơ chế, ta mới có thể đánh giá Wyckoff như một **khung giả thuyết về chuyển giao vị thế**, thay vì học thuộc schematic.
 
 ---
 
-## Phần 6 — Wyckoff
+## Module 6 — Wyckoff
 
 ### Câu hỏi phải trả lời
 
@@ -602,7 +604,7 @@ Phát biểu chính xác: **một cơ chế có thể dự báo dấu vết, nh�
 
 ---
 
-# 5. Những cặp khái niệm nối các phần với nhau
+# 5. Những cặp khái niệm nối các module với nhau
 
 | Khái niệm A | Khái niệm B | Mối quan hệ cần hiểu |
 |---|---|---|
@@ -619,35 +621,35 @@ Phát biểu chính xác: **một cơ chế có thể dự báo dấu vết, nh�
 
 ---
 
-# 6. Một hiện tượng được soi qua sáu phần như thế nào?
+# 6. Một hiện tượng được soi qua sáu module như thế nào?
 
 Tình huống: **giá vượt đỉnh 100, volume tăng mạnh, lên 102 rồi quay lại 99.5.**
 
 ```text
-PHẦN 1 — MICROSTRUCTURE
+MODULE 1 — MICROSTRUCTURE
 Lệnh nào khớp ở ask? Giá cuối được tạo ra qua những mức nào?
         ↓
-PHẦN 2 — LIQUIDITY
+MODULE 2 — LIQUIDITY
 Ask quanh 100 dày hay mỏng? Buy stop nào có thể được kích hoạt?
         ↓
-PHẦN 3 — ORDER FLOW
+MODULE 3 — ORDER FLOW
 Mua chủ động có tiếp diễn không? Seller hấp thụ hay buyer cạn lực?
         ↓
-PHẦN 4 — INSTITUTIONAL EXECUTION
+MODULE 4 — INSTITUTIONAL EXECUTION
 Có actor cần bán size và dùng lượng mua mới làm phía đối ứng không?
         ↓
-PHẦN 5 — MARKET STRUCTURE
+MODULE 5 — MARKET STRUCTURE
 Đây là breakout thất bại, retest hay chỉ là nhiễu trong range?
         ↓
-PHẦN 6 — WYCKOFF
+MODULE 6 — WYCKOFF
 Upthrust/distribution có giải thích tốt hơn tin tức, sổ mỏng hoặc short covering không?
 ```
 
-**Cách đọc:** mỗi phần không đưa ra một câu trả lời mới hoàn toàn; nó bổ sung một tầng câu hỏi và bằng chứng. Càng xuống dưới, khoảng cách với dữ liệu trực tiếp càng lớn và yêu cầu kiểm chứng càng cao.
+**Cách đọc:** mỗi module không đưa ra một câu trả lời mới hoàn toàn; nó bổ sung một tầng câu hỏi và bằng chứng. Càng xuống dưới, khoảng cách với dữ liệu trực tiếp càng lớn và yêu cầu kiểm chứng càng cao.
 
 Phát biểu chính xác: **không được bắt đầu bằng nhãn “upthrust” hay “quét stop”; phải đi từ cơ chế khớp lệnh và thanh khoản, qua dòng lệnh và khả năng hấp thụ, rồi mới đánh giá cấu trúc và giả thuyết Wyckoff.**
 
-> **Ghi nhớ:** cùng một hiện tượng, mỗi phần thêm độ sâu — không thêm sự chắc chắn vô điều kiện.
+> **Ghi nhớ:** cùng một hiện tượng, mỗi module thêm độ sâu — không thêm sự chắc chắn vô điều kiện.
 
 ---
 
@@ -655,7 +657,7 @@ Phát biểu chính xác: **không được bắt đầu bằng nhãn “upthrus
 
 ## Vòng 1 — Nắm cơ chế nền tảng
 
-Học Phần 1 và Phần 2 cho đến khi bạn có thể tự vẽ:
+Học Module 1 và Module 2 cho đến khi bạn có thể tự vẽ:
 
 ```text
 LỆNH CHỦ ĐỘNG → TIÊU THỤ THANH KHOẢN → TÌM MỨC GIÁ MỚI → GIÁ THAY ĐỔI
@@ -665,7 +667,7 @@ Không chuyển tiếp nếu vẫn giải thích bằng “nhiều người mua 
 
 ## Vòng 2 — Đọc tương tác
 
-Học Phần 3 và luôn hỏi:
+Học Module 3 và luôn hỏi:
 
 - Ai chủ động?
 - Phía đối diện có hấp thụ không?
@@ -674,13 +676,13 @@ Học Phần 3 và luôn hỏi:
 
 ## Vòng 3 — Đặt mình vào vị trí tổ chức
 
-Học Phần 4 bằng bài toán thực thi thật:
+Học Module 4 bằng bài toán thực thi thật:
 
 > Nếu phải mua lượng bằng nhiều ngày giao dịch bình thường, tôi sẽ chia lệnh thế nào và chịu những rủi ro gì?
 
 ## Vòng 4 — Quay lại biểu đồ
 
-Chỉ từ Phần 5 mới dùng chart như đối tượng chính. Mỗi cấu trúc phải phân rã ngược được về:
+Chỉ từ Module 5 mới dùng chart như đối tượng chính. Mỗi cấu trúc phải phân rã ngược được về:
 
 ```text
 MÔ HÌNH → CẤU TRÚC → GIÁ/VOLUME → DÒNG LỆNH ↔ THANH KHOẢN → LỆNH/ĐỘNG CƠ
@@ -781,8 +783,8 @@ CÓ NHỮNG GIẢ THUYẾT NÀO?
 
 ## Tôi đã nắm tổng quan nếu...
 
-- Có thể kể lại vai trò của sáu phần mà không đọc mục lục.
-- Giải thích được vì sao Phần 2 cần Phần 1, và Phần 3 cần Phần 2.
+- Có thể kể lại vai trò của sáu module mà không đọc mục lục.
+- Giải thích được vì sao Module 2 cần Module 1, và Module 3 cần Module 2.
 - Đi xuôi từ lệnh tới cấu trúc giá và đi ngược từ cấu trúc về nhiều cơ chế có thể.
 - Phân biệt được sức chứa của thị trường với lực đang sử dụng sức chứa đó.
 - Không biến chart pattern hoặc Wyckoff thành nguyên nhân.

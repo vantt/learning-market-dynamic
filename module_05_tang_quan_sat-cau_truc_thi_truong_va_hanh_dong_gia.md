@@ -1,4 +1,4 @@
-# Bài học Phần 5 — Cấu trúc thị trường và hành động giá
+# Module 5 — Tầng quan sát / Cấu trúc thị trường và hành động giá
 
 ## Câu hỏi trung tâm
 
@@ -436,7 +436,7 @@ chuỗi lệnh + absorption   →    trend/range/events     →    framework chu
 liquidity migration            breakout/failure            spring/UTAD/test
 ```
 
-**Cách đọc:** Phần 5 nén mechanism thành observable structure; Phần 6 thêm hypothesis framework nhưng không được bỏ cơ chế nền.
+**Cách đọc:** Module 5 nén mechanism thành observable structure; Module 6 thêm hypothesis framework nhưng không được bỏ cơ chế nền.
 
 > **Ghi nhớ:** structure là cầu nối giữa microstructure và Wyckoff.
 
@@ -480,4 +480,4 @@ Nhìn một Cup & Handle và giải thích mà không dùng tên: advance, profi
 
 ## Cầu nối sang bài tiếp theo
 
-Wyckoff tổ chức price + volume + structure thành giả thuyết về chuyển giao vị thế. Phần 6 sẽ chỉ rõ khi khung này hữu ích, giới hạn suy luận và cách không biến schematic thành câu chuyện “cá mập”.
+Wyckoff tổ chức price + volume + structure thành giả thuyết về chuyển giao vị thế. Module 6 sẽ chỉ rõ khi khung này hữu ích, giới hạn suy luận và cách không biến schematic thành câu chuyện “cá mập”.

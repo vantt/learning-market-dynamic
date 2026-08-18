@@ -1,28 +1,33 @@
-# Giáo trình: Hiểu cơ chế vận động giá & dòng tiền lớn từ First Principles
+# Giáo trình: Hiểu cơ chế vận động giá và dòng tiền lớn theo nguyên lý nền tảng
 
 **Mã tham chiếu:** MKT-CURR03
 
 ## Thuật ngữ cốt lõi dùng xuyên suốt giáo trình
 
-Giáo trình sử dụng tiếng Việt là ngôn ngữ chính. Các thuật ngữ tiếng Anh quan trọng được giữ trong ngoặc để người học có thể đọc tài liệu quốc tế mà không mất nghĩa chuyên ngành.
+Giáo trình dùng tiếng Việt làm ngôn ngữ chính. Các thuật ngữ tiếng Anh quan trọng được giữ trong ngoặc để người học có thể đọc tài liệu quốc tế mà không mất nghĩa chuyên ngành.
 
 | English term | Cách gọi tiếng Việt | Định nghĩa ngắn bằng tiếng Việt |
 |---|---|---|
-| First Principles | Nguyên lý nền tảng | Cách suy luận bằng cách phân rã hiện tượng về thành phần cơ bản nhất, thay vì học thuộc mô hình có sẵn. |
-| Core Concept | Khái niệm lõi | Khái niệm phải hiểu sâu qua đủ 9 lớp: lý do tồn tại, bản chất, cơ chế, người tham gia, động cơ, bằng chứng, giả thuyết thay thế, điều kiện bác bỏ và ứng dụng. |
+| First Principles | Nguyên lý nền tảng | Cách suy luận bằng cách phân rã hiện tượng về các thành phần cơ bản nhất, thay vì học thuộc mô hình có sẵn. |
+| Core Concept | Khái niệm lõi | Khái niệm cần được hiểu sâu qua đủ 9 lớp: lý do tồn tại, bản chất, cơ chế, người tham gia, động cơ, bằng chứng, giả thuyết thay thế, điều kiện bác bỏ và ứng dụng. |
 | Supporting Concept | Khái niệm hỗ trợ | Khái niệm giúp giải thích hoặc dùng một khái niệm lõi, nhưng không cần đào sâu như khái niệm lõi. |
-| Tool / Measurement | Công cụ / phép đo | Cách đo hoặc biểu diễn dữ liệu; cần hiểu nó đo gì, không đo gì và khi nào dễ gây hiểu nhầm. |
-| Market Microstructure | Cấu trúc vi mô thị trường | Cơ chế lệnh được gửi, xếp hàng, khớp và biến thành giá giao dịch. |
-| Liquidity | Thanh khoản | Khả năng thị trường hấp thụ lệnh mua/bán mà không làm giá dịch chuyển quá mạnh. |
-| Order Flow | Dòng lệnh | Dấu vết của việc ai đang chủ động mua/bán và phía đối diện hấp thụ ra sao. |
+| Tool / Measurement | Công cụ / phép đo | Cách đo hoặc biểu diễn dữ liệu; cần hiểu công cụ đó đo gì, không đo gì và khi nào dễ gây hiểu nhầm. |
+| Market Dynamics | Cơ chế vận động của thị trường | Khái niệm bao trùm: cách người tham gia, thông tin, kỳ vọng, lệnh, thanh khoản và cấu trúc tương tác để làm thị trường thay đổi theo thời gian. |
+| Market Microstructure | Cấu trúc vi mô thị trường | Cơ chế mà qua đó lệnh được gửi, xếp hàng, khớp và biến thành giá giao dịch. |
+| Liquidity | Thanh khoản | Khả năng thị trường hấp thụ lệnh mua hoặc bán mà không làm giá dịch chuyển quá mạnh. |
+| Order Flow | Dòng lệnh | Dấu vết của việc ai đang chủ động mua hoặc bán và phía đối diện hấp thụ ra sao. |
+| Institutional Execution | Thực thi lệnh của tổ chức | Cách tổ chức giao dịch khối lượng lớn trong điều kiện có chi phí, rủi ro và rò rỉ thông tin. |
 | Market Impact | Tác động lên giá | Mức độ một lệnh làm giá thay đổi do tiêu thụ thanh khoản. |
+| Price Action | Hành động giá | Dấu vết giá trực tiếp của quá trình tương tác lệnh, thanh khoản và kỳ vọng theo thời gian. |
+| Market Structure | Cấu trúc thị trường | Cách chuỗi giá hình thành đỉnh, đáy, xu hướng, vùng đi ngang, phá vỡ và thất bại. |
 | Evidence | Bằng chứng | Dữ liệu có thể quan sát hoặc kiểm tra được, dùng để ủng hộ hoặc làm yếu một giả thuyết. |
 | Falsification | Điều kiện bác bỏ | Dấu hiệu cho thấy giả thuyết hiện tại sai hoặc yếu đi đáng kể. |
+| Wyckoff | Khung Wyckoff | Khung giả thuyết về cung, cầu và chuyển giao vị thế; phải được kiểm tra bằng bằng chứng, không được dùng như sơ đồ đọc chắc ý đồ. |
 
 ## 0. Mục tiêu của giáo trình
 
 Giáo trình này không bắt đầu từ việc học thuộc mô hình nến, mô hình giá
-(chart pattern) hay tín hiệu mua/bán.
+(chart pattern) hay tín hiệu mua hoặc bán.
 
 Mục tiêu là xây dựng khả năng suy luận:
 
@@ -30,24 +35,24 @@ Mục tiêu là xây dựng khả năng suy luận:
 
 Sau khi hoàn thành, người học cần có khả năng:
 
--   Giải thích vì sao giá thay đổi từ cơ chế khớp lệnh và cung--cầu thực
+-   Giải thích vì sao giá thay đổi từ cơ chế khớp lệnh và cung-cầu thực
     tế.
 -   Hiểu vai trò của thanh khoản và vì sao dòng tiền lớn cần thanh
     khoản.
 -   Phân biệt điều quan sát được với suy luận và câu chuyện kể về thị
     trường.
--   Hiểu cách tổ chức lớn thực thi lệnh và tác động lên giá (market impact) phát sinh.
+-   Hiểu cách tổ chức lớn thực thi lệnh và vì sao tác động lên giá (market impact) phát sinh.
 -   Giải thích hỗ trợ (Support), kháng cự (Resistance), phá vỡ (Breakout), nhịp lùi (Pullback) từ cơ chế thị
     trường.
 -   Đọc giá + khối lượng + cấu trúc thị trường (Price + Volume + Structure) như dấu vết của hành vi thị trường.
--   Hiểu Wyckoff từ cơ chế thay vì học thuộc sơ đồ mẫu (schematic).
+-   Hiểu Wyckoff từ cơ chế, thay vì học thuộc sơ đồ mẫu (schematic).
 -   Không mặc định mọi biến động bất thường là do "cá mập thao túng".
 -   Xây dựng và kiểm chứng nhiều giả thuyết cạnh tranh trước khi ra
     quyết định.
 
 ------------------------------------------------------------------------
 
-# I. Phương pháp học cố định cho mỗi khái niệm
+# I. Phương pháp học cố định cho từng khái niệm
 
 Mỗi **khái niệm lõi (Core Concept)** phải được học qua 9 lớp.
 
@@ -57,11 +62,11 @@ Mỗi **khái niệm lõi (Core Concept)** phải được học qua 9 lớp.
 -   Nếu khái niệm này không tồn tại, thị trường sẽ vận hành ra sao?
 -   Ta có thể tự suy ra khái niệm từ một tình huống đơn giản hay không?
 
-## 2. WHAT --- Bản chất là gì?
+## 2. WHAT --- Bản chất của khái niệm là gì?
 
 Học theo ba tầng:
 
-1.  Giải thích cực kỳ đơn giản.
+1.  Giải thích thật đơn giản.
 2.  Định nghĩa tài chính chuẩn.
 3.  Định nghĩa theo nguyên lý nền tảng (First Principles).
 
@@ -129,10 +134,9 @@ Phân biệt dữ liệu có thể quan sát:
 
 Từ cơ chế phải suy ra được dự đoán có thể kiểm tra.
 
-## 7. ALTERNATIVE EXPLANATIONS --- Còn cách giải thích nào khác?
+## 7. ALTERNATIVE EXPLANATIONS --- Còn cách giải thích nào khác không?
 
-Với mỗi hiện tượng phải có ít nhất 2--3 giả thuyết cạnh tranh khi hợp
-lý.
+Với mỗi hiện tượng, khi hợp lý, phải có ít nhất 2 đến 3 giả thuyết cạnh tranh.
 
 Ví dụ một cú phá đáy có thể liên quan tới:
 
@@ -145,7 +149,7 @@ Ví dụ một cú phá đáy có thể liên quan tới:
 -   Dịch chuyển theo thị trường chung (Broad-market movement)
 -   Biến động ngẫu nhiên (Random volatility)
 
-## 8. FALSIFICATION --- Điều gì chứng minh giả thuyết yếu hoặc sai?
+## 8. FALSIFICATION --- Điều gì làm giả thuyết yếu đi hoặc sai?
 
 Không chỉ tìm bằng chứng ủng hộ.
 
@@ -159,7 +163,7 @@ Quy trình:
 
 **Quan sát (Observe) → diễn giải (Interpret) → lập giả thuyết (Hypothesize) → kiểm tra (Test) → cập nhật xác suất → quyết định**
 
-Ứng dụng không nhất thiết phải kết thúc bằng mua/bán (Buy/Sell).
+Ứng dụng không nhất thiết phải kết thúc bằng quyết định mua hoặc bán (Buy/Sell).
 
 ------------------------------------------------------------------------
 
@@ -188,7 +192,7 @@ Không biến chỉ báo (indicator) thành "chân lý".
 
 # III. Nguyên tắc FACT → INFERENCE → STORY
 
-Trong mọi nghiên cứu tình huống (case study) phải tách ba tầng.
+Trong mọi nghiên cứu tình huống (case study), phải tách ba tầng.
 
 ### Dữ kiện (FACT)
 
@@ -215,13 +219,152 @@ bằng chứng.
 
 ------------------------------------------------------------------------
 
-# PHẦN 1 --- CẤU TRÚC VI MÔ THỊ TRƯỜNG (MARKET MICROSTRUCTURE)
+# IV. Bản đồ phân cấp của giáo trình
+
+Giáo trình nên được đọc theo ba cấp:
+
+```text
+MODULE / MÔ-ĐUN
+  = một lớp lớn trong hệ thống Market Dynamics
+
+CHAPTER / CHƯƠNG
+  = một cụm vấn đề cần hiểu trong module
+
+LESSON / CONCEPT
+  = bài học, khái niệm lõi, khái niệm hỗ trợ hoặc công cụ đo lường trong chapter
+```
+
+Cách chia này làm rõ rằng **Market Dynamics không phải một môn ngang hàng với Market Microstructure và Market Structure**. Market Dynamics là hệ thống bao trùm; các module bên dưới lần lượt đi từ cơ chế bên trong thị trường, đến dấu vết quan sát được, rồi đến khung diễn giải.
+
+Đối chiếu với cấu trúc cũ:
+
+| Cấu trúc cũ | Điểm mạnh cần giữ | Điều chỉnh trong cấu trúc mới |
+|---|---|---|
+| Sáu bài nội dung chính đi theo thứ tự tuyến tính | Mạch học tốt: bài trước tạo câu hỏi cho bài sau | Giữ thứ tự đó nhưng đổi thành Module 1 đến Module 6 để thể hiện mỗi module là một lớp trong hệ thống |
+| Phương pháp học 9 lớp | Rõ về cách học sâu một khái niệm | Giữ nguyên làm phương pháp bắt buộc cho mọi Core Concept |
+| Cửa kiểm tra sau mỗi module | Hữu ích để kiểm tra năng lực trước khi học tiếp | Giữ nguyên, bổ sung Cửa kiểm tra 0 cho Market Dynamics |
+| Chưa có cấp bao trùm rõ cho Market Dynamics | Dễ khiến người học nghĩ Dynamics, Microstructure và Structure là ba môn ngang hàng | Thêm Module 0 để định vị Dynamics là bản đồ hệ thống bao trùm |
+| Lớp tích hợp nằm sau các bài chuyên môn | Đúng về mặt thực hành | Đổi thành Module 7 để hoàn tất chuỗi từ học cơ chế đến nghiên cứu tình huống và quyết định |
+
+```text
+MODULE 0 — MARKET DYNAMICS / BẢN ĐỒ HỆ THỐNG
+  Chapter 0.1 — Thị trường như một hệ thống vận động
+  Chapter 0.2 — Người tham gia → động cơ → lệnh → giao dịch → giá
+  Chapter 0.3 — Fact / Inference / Story
+  Chapter 0.4 — Vòng phản hồi và hệ thống thích nghi
+  Chapter 0.5 — Cách học theo nguyên lý nền tảng
+
+MODULE 1 — TẦNG CƠ CHẾ / MARKET MICROSTRUCTURE
+  Chapter 1.x — Lệnh, sổ lệnh, khớp lệnh, spread, price formation
+
+MODULE 2 — TẦNG SỨC CHỨA / LIQUIDITY
+  Chapter 2.x — Sức hấp thụ, liquidity pools, stops, sweep, vacuum
+
+MODULE 3 — TẦNG ÁP LỰC LỆNH / ORDER FLOW
+  Chapter 3.x — Aggressive/passive flow, imbalance, absorption, exhaustion
+
+MODULE 4 — TẦNG THỰC THI / INSTITUTIONAL EXECUTION
+  Chapter 4.x — Ràng buộc tổ chức, execution cost, slicing, VWAP/TWAP, hidden liquidity
+
+MODULE 5 — TẦNG QUAN SÁT / MARKET STRUCTURE AND PRICE ACTION
+  Chapter 5.x — Swing, trend, range, support/resistance, breakout, failed breakout
+
+MODULE 6 — TẦNG DIỄN GIẢI / WYCKOFF AS HYPOTHESIS
+  Chapter 6.x — Accumulation, distribution, spring, test, UTAD, falsification
+
+MODULE 7 — TẦNG TÍCH HỢP / CASE STUDY AND DECISION
+  Chapter 7.x — Quy trình từ dữ kiện đến giả thuyết, cập nhật xác suất và quyết định
+```
+
+File nội dung tương ứng:
+
+| Module | File |
+|---|---|
+| Module 0 — Market Dynamics / Bản đồ hệ thống | [module_00_market_dynamics-ban_do_he_thong.md](module_00_market_dynamics-ban_do_he_thong.md) |
+| Module 1 — Tầng cơ chế / Market Microstructure | [module_01_tang_co_che-market_microstructure.md](module_01_tang_co_che-market_microstructure.md) |
+| Module 2 — Tầng sức chứa / Thanh khoản | [module_02_tang_suc_chua-thanh_khoan.md](module_02_tang_suc_chua-thanh_khoan.md) |
+| Module 3 — Tầng áp lực lệnh / Dòng lệnh | [module_03_tang_ap_luc_lenh-dong_lenh.md](module_03_tang_ap_luc_lenh-dong_lenh.md) |
+| Module 4 — Tầng thực thi / Lệnh tổ chức | [module_04_tang_thuc_thi-lenh_to_chuc.md](module_04_tang_thuc_thi-lenh_to_chuc.md) |
+| Module 5 — Tầng quan sát / Cấu trúc thị trường và hành động giá | [module_05_tang_quan_sat-cau_truc_thi_truong_va_hanh_dong_gia.md](module_05_tang_quan_sat-cau_truc_thi_truong_va_hanh_dong_gia.md) |
+| Module 6 — Tầng diễn giải / Wyckoff như một giả thuyết | [module_06_tang_dien_giai-wyckoff_gia_thuyet.md](module_06_tang_dien_giai-wyckoff_gia_thuyet.md) |
+
+Phát biểu nhân quả của toàn giáo trình:
+
+**Người tham gia có động cơ và ràng buộc khác nhau → họ tạo lệnh → lệnh tương tác với thanh khoản → giao dịch tạo giá và khối lượng → chuỗi giá tạo hành động giá và cấu trúc thị trường → cấu trúc chỉ trở thành giả thuyết hữu ích khi có bằng chứng, dự đoán và điều kiện bác bỏ.**
+
+> **Ghi nhớ:** Module là lớp hệ thống; Chapter là cụm vấn đề; Lesson/Concept là đơn vị kiến thức cần học và kiểm tra.
+
+------------------------------------------------------------------------
+
+# MODULE 0 --- MARKET DYNAMICS / BẢN ĐỒ HỆ THỐNG
+
+## Câu hỏi trung tâm
+
+> **Toàn bộ các lớp từ người tham gia, lệnh, thanh khoản, dòng lệnh, cấu trúc giá đến giả thuyết thị trường liên kết với nhau như thế nào?**
+
+## Chapter 0.1: Market Dynamics là gì?
+
+**Khái niệm lõi (Core)**
+
+-   Market Dynamics là cơ chế vận động của thị trường.
+-   Nó bao trùm Market Microstructure, Liquidity, Order Flow, Institutional Execution, Price Action, Market Structure và Wyckoff.
+-   Nó không phải một tín hiệu giao dịch riêng lẻ.
+
+## Chapter 0.2: Quan hệ giữa Dynamics, Microstructure và Structure
+
+**Khái niệm lõi (Core)**
+
+```text
+MARKET DYNAMICS
+      ↓ bao trùm
+MARKET MICROSTRUCTURE
+      ↓ tạo giao dịch và giá
+PRICE ACTION + MARKET STRUCTURE
+      ↓ cung cấp dữ liệu cho giả thuyết
+WYCKOFF / MARKET HYPOTHESES
+```
+
+**Cần trả lời được:** Market Dynamics là toàn cảnh, Microstructure là cơ chế vận hành, Structure là dấu vết quan sát được.
+
+## Chapter 0.3: Fact / Inference / Story
+
+**Khái niệm lõi (Core)**
+
+Mọi bài phân tích phải phân biệt:
+
+-   Dữ kiện quan sát được (Fact)
+-   Suy luận có điều kiện (Inference)
+-   Câu chuyện diễn giải về ý đồ (Story)
+
+## Chapter 0.4: Vòng phản hồi và hệ thống thích nghi
+
+**Khái niệm hỗ trợ (Supporting)**
+
+Giá mới làm người tham gia cập nhật kỳ vọng, rủi ro và lệnh; các lệnh mới lại làm thanh khoản và giá thay đổi. Vì vậy cấu trúc giá vừa là kết quả của quá khứ vừa là đầu vào cho hành vi kế tiếp.
+
+## Chapter 0.5: Cách học theo nguyên lý nền tảng
+
+**Khái niệm lõi (Core)**
+
+Không bắt đầu từ tên mô hình. Với mỗi hiện tượng phải phân rã về:
+
+**Người tham gia → động cơ/ràng buộc → lệnh → thanh khoản → giao dịch → giá/volume → cấu trúc → giả thuyết → điều kiện bác bỏ**
+
+### Cửa kiểm tra (Gate) 0
+
+Phải giải thích được:
+
+> Vì sao Market Dynamics là khái niệm bao trùm, còn Market Microstructure và Market Structure là hai lớp khác nhau bên trong cùng một hệ thống?
+
+------------------------------------------------------------------------
+
+# MODULE 1 --- TẦNG CƠ CHẾ / CẤU TRÚC VI MÔ THỊ TRƯỜNG (MARKET MICROSTRUCTURE)
 
 ## Câu hỏi trung tâm
 
 > **Một lệnh mua/bán thực sự biến thành chuyển động giá bằng cách nào?**
 
-## 1.1 Các thành phần của thị trường
+## Chapter 1.1: Các thành phần của thị trường
 
 **Khái niệm hỗ trợ (Supporting)**
 
@@ -236,7 +379,7 @@ bằng chứng.
 **Cần trả lời được:** Ai làm gì và luồng một lệnh đi qua hệ thống như
 thế nào?
 
-## 1.2 Lệnh (Orders)
+## Chapter 1.2: Lệnh (Orders)
 
 **Khái niệm lõi (Core)**
 
@@ -250,7 +393,7 @@ thế nào?
 **Câu hỏi điều tra:** Một người muốn mua ngay khác gì một người chỉ mua nếu
 giá đủ thấp?
 
-## 1.3 Bid -- Ask -- Chênh lệch mua-bán (Spread)
+## Chapter 1.3: Bid/Ask và chênh lệch mua-bán (Spread)
 
 **Khái niệm lõi (Core)**
 
@@ -262,7 +405,7 @@ giá đủ thấp?
 **Câu hỏi trọng tâm:** Tại sao luôn tồn tại chênh lệch giữa giá muốn mua
 và muốn bán?
 
-## 1.4 Sổ lệnh giới hạn (Limit Order Book)
+## Chapter 1.4: Sổ lệnh giới hạn (Limit Order Book)
 
 **Khái niệm lõi (Core)**
 
@@ -275,7 +418,7 @@ và muốn bán?
 **Thí nghiệm tư duy:** Nếu giá chào bán (Ask) tại 100 chỉ có 1.000 cổ phiếu nhưng tôi
 gửi lệnh mua thị trường 10.000 cổ phiếu thì chuyện gì xảy ra?
 
-## 1.5 Khớp lệnh và hình thành giá (Matching & Price Formation)
+## Chapter 1.5: Khớp lệnh và hình thành giá (Matching & Price Formation)
 
 **Khái niệm lõi (Core)**
 
@@ -287,7 +430,7 @@ gửi lệnh mua thị trường 10.000 cổ phiếu thì chuyện gì xảy ra?
 **Cần tự suy ra:** Giá không "tự chạy"; lệnh tương tác khiến mức giá
 giao dịch thay đổi.
 
-## 1.6 Tác động lên giá (Market Impact)
+## Chapter 1.6: Tác động lên giá (Market Impact)
 
 **Khái niệm lõi (Core)**
 
@@ -300,7 +443,7 @@ giao dịch thay đổi.
 người kia giao dịch cổ phiếu cực kém thanh khoản. Tại sao tác động khác
 nhau?
 
-## 1.7 Biến động giá (Volatility)
+## Chapter 1.7: Biến động giá (Volatility)
 
 **Khái niệm hỗ trợ (Supporting)**
 
@@ -317,13 +460,13 @@ Phải giải thích được:
 
 ------------------------------------------------------------------------
 
-# PHẦN 2 --- THANH KHOẢN (LIQUIDITY)
+# MODULE 2 --- TẦNG SỨC CHỨA / THANH KHOẢN (LIQUIDITY)
 
 ## Câu hỏi trung tâm
 
 > **Nếu tôi muốn giao dịch một lượng rất lớn, ai sẽ đứng phía bên kia?**
 
-## 2.1 Thanh khoản (Liquidity)
+## Chapter 2.1: Thanh khoản (Liquidity)
 
 **Khái niệm lõi (Core)**
 
@@ -333,14 +476,14 @@ Phải giải thích được:
 -   Khả năng khớp ngay (Immediacy)
 -   Khả năng hồi phục thanh khoản (Resiliency)
 
-## 2.2 Thanh khoản (Liquidity) vs Khối lượng (Volume)
+## Chapter 2.2: Thanh khoản (Liquidity) và khối lượng (Volume)
 
 **Khái niệm lõi (Core)**
 
 -   Vì sao khối lượng cao không đồng nghĩa thanh khoản cao?
 -   Vì sao một thị trường có nhiều giao dịch vẫn có thể trượt giá mạnh?
 
-## 2.3 Thanh khoản đang chờ (Resting Liquidity)
+## Chapter 2.3: Thanh khoản đang chờ (Resting Liquidity)
 
 **Khái niệm lõi (Core)**
 
@@ -349,7 +492,7 @@ Phải giải thích được:
 -   Thanh khoản chào bán (Ask liquidity)
 -   Sự tập trung lệnh (Order concentration)
 
-## 2.4 Vùng thanh khoản (Liquidity Pools)
+## Chapter 2.4: Vùng thanh khoản (Liquidity Pools)
 
 **Khái niệm lõi (Core)**
 
@@ -363,7 +506,7 @@ Nghiên cứu tại sao lệnh có thể tập trung quanh:
 
 Không mặc định mọi vùng này đều chứa cùng một loại lệnh.
 
-## 2.5 Lệnh dừng và lệnh được kích hoạt (Stops and Triggered Orders)
+## Chapter 2.5: Lệnh dừng và lệnh được kích hoạt (Stops and Triggered Orders)
 
 **Khái niệm lõi (Core)**
 
@@ -376,7 +519,7 @@ Không mặc định mọi vùng này đều chứa cùng một loại lệnh.
 **Cơ chế:** Khi mức giá bị chạm, những lệnh mới nào có thể xuất
 hiện?
 
-## 2.6 Quét thanh khoản (Liquidity Sweep) / Stop Run
+## Chapter 2.6: Quét thanh khoản (Liquidity Sweep) / Stop Run
 
 **Khái niệm lõi (Core)**
 
@@ -389,7 +532,7 @@ chế thị trường.
 
 Không gán thao túng có chủ ý nếu bằng chứng không đủ.
 
-## 2.7 Khoảng trống thanh khoản (Liquidity Vacuum)
+## Chapter 2.7: Khoảng trống thanh khoản (Liquidity Vacuum)
 
 **Khái niệm hỗ trợ (Supporting)**
 
@@ -397,7 +540,7 @@ Không gán thao túng có chủ ý nếu bằng chứng không đủ.
 -   Khoảng trống giữa các mức giá (Gap between price levels)
 -   Giá di chuyển nhanh (Rapid price movement)
 
-## 2.8 Thanh khoản và khám phá giá (Liquidity and Price Discovery)
+## Chapter 2.8: Thanh khoản và khám phá giá (Liquidity and Price Discovery)
 
 **Khái niệm lõi (Core)**
 
@@ -413,14 +556,14 @@ Giải thích được:
 
 ------------------------------------------------------------------------
 
-# PHẦN 3 --- DÒNG LỆNH (ORDER FLOW)
+# MODULE 3 --- TẦNG ÁP LỰC LỆNH / DÒNG LỆNH (ORDER FLOW)
 
 ## Câu hỏi trung tâm
 
 > **Ai đang chủ động yêu cầu giao dịch ngay, và phía đối diện có hấp thụ
 > được không?**
 
-## 3.1 Người tham gia thụ động và chủ động (Passive vs Aggressive Participants)
+## Chapter 3.1: Người tham gia thụ động và chủ động (Passive vs Aggressive Participants)
 
 **Khái niệm lõi (Core)**
 
@@ -429,7 +572,7 @@ Giải thích được:
 -   Người mua chủ động (Aggressive buyer)
 -   Người bán chủ động (Aggressive seller)
 
-## 3.2 Giao dịch tại Bid/Ask (Bid/Ask Transactions)
+## Chapter 3.2: Giao dịch tại Bid/Ask (Bid/Ask Transactions)
 
 **Khái niệm lõi (Core)**
 
@@ -438,7 +581,7 @@ Giải thích được:
 -   Do bên mua chủ động (Buyer initiated)
 -   Do bên bán chủ động (Seller initiated)
 
-## 3.3 Mất cân bằng lệnh (Order Imbalance)
+## Chapter 3.3: Mất cân bằng lệnh (Order Imbalance)
 
 **Khái niệm lõi (Core)**
 
@@ -447,18 +590,18 @@ Giải thích được:
 -   Tính kéo dài (Persistence)
 -   Mất cân bằng cục bộ và rộng hơn (Local vs broader imbalance)
 
-## 3.4 Hấp thụ (Absorption)
+## Chapter 3.4: Hấp thụ (Absorption)
 
 **Khái niệm lõi (Core)**
 
-Case trung tâm:
+Tình huống trung tâm:
 
 > Khối lượng bán rất lớn nhưng giá không giảm đáng kể.
 
 Phải xây nhiều giả thuyết và bằng chứng cần thiết trước khi kết luận
 hấp thụ (absorption).
 
-## 3.5 Cạn lực (Exhaustion)
+## Chapter 3.5: Cạn lực (Exhaustion)
 
 **Khái niệm lõi (Core)**
 
@@ -466,7 +609,7 @@ hấp thụ (absorption).
 -   Không thể tiếp diễn (Failure to continue)
 -   Hấp thụ và cạn lực (Absorption vs exhaustion)
 
-## 3.6 Hoạt động chủ động và phản ứng (Initiative vs Responsive Activity)
+## Chapter 3.6: Hoạt động chủ động và phản ứng (Initiative vs Responsive Activity)
 
 **Khái niệm hỗ trợ (Supporting)**
 
@@ -475,7 +618,7 @@ Ai đang:
 -   Chủ động tìm mức giá mới?
 -   Phản ứng khi giá trở nên hấp dẫn?
 
-## 3.7 Khối lượng (Volume)
+## Chapter 3.7: Khối lượng (Volume)
 
 **Khái niệm lõi (Core)**
 
@@ -488,7 +631,7 @@ Phải nghiên cứu ít nhất bốn trường hợp:
 
 Không học chúng như bốn quy tắc cứng.
 
-## 3.8 Delta / Cumulative Delta
+## Chapter 3.8: Delta / Cumulative Delta
 
 **Công cụ (Tool)**
 
@@ -496,7 +639,7 @@ Không học chúng như bốn quy tắc cứng.
 -   Không đo cái gì?
 -   Phân kỳ (Divergence) có thể xuất hiện vì sao?
 
-## 3.9 Footprint Chart
+## Chapter 3.9: Footprint Chart
 
 **Công cụ (Tool)**
 
@@ -504,7 +647,7 @@ Không học chúng như bốn quy tắc cứng.
 -   Mất cân bằng (Imbalance)
 -   Dấu hiệu hấp thụ (Absorption clues)
 
-## 3.10 Hồ sơ khối lượng (Volume Profile)
+## Chapter 3.10: Hồ sơ khối lượng (Volume Profile)
 
 **Công cụ (Tool)**
 
@@ -523,14 +666,14 @@ và đưa ra nhiều cách giải thích thay vì một kết luận duy nhất.
 
 ------------------------------------------------------------------------
 
-# PHẦN 4 --- THỰC THI LỆNH CỦA TỔ CHỨC (INSTITUTIONAL EXECUTION)
+# MODULE 4 --- TẦNG THỰC THI / LỆNH TỔ CHỨC (INSTITUTIONAL EXECUTION)
 
 ## Câu hỏi trung tâm
 
-> **Nếu tôi quản lý một quỹ rất lớn, làm thế nào mua/bán mà không tự làm
-> xấu giá của mình?**
+> **Nếu tôi quản lý một quỹ rất lớn, làm thế nào để mua/bán mà không làm
+> giá khớp của chính mình xấu đi?**
 
-## 4.1 Ràng buộc của tổ chức (Institutional Constraints)
+## Chapter 4.1: Ràng buộc của tổ chức (Institutional Constraints)
 
 **Khái niệm lõi (Core)**
 
@@ -541,7 +684,7 @@ và đưa ra nhiều cách giải thích thay vì một kết luận duy nhất.
 -   Rủi ro (Risk)
 -   Rò rỉ thông tin (Information leakage)
 
-## 4.2 Chi phí thực thi (Execution Cost)
+## Chapter 4.2: Chi phí thực thi (Execution Cost)
 
 **Khái niệm lõi (Core)**
 
@@ -551,19 +694,19 @@ và đưa ra nhiều cách giải thích thay vì một kết luận duy nhất.
 -   Tác động lên giá (Market impact)
 -   Chi phí cơ hội (Opportunity cost)
 
-## 4.3 Chênh lệch thực thi (Implementation Shortfall)
+## Chapter 4.3: Chênh lệch thực thi (Implementation Shortfall)
 
 **Khái niệm lõi (Core)**
 
 Hiểu khoảng cách giữa quyết định đầu tư và kết quả thực thi thực tế.
 
-## 4.4 Chia nhỏ lệnh (Order Slicing)
+## Chapter 4.4: Chia nhỏ lệnh (Order Slicing)
 
 **Khái niệm lõi (Core)**
 
 Tự suy ra vì sao lệnh lớn thường phải chia nhỏ.
 
-## 4.5 VWAP
+## Chapter 4.5: VWAP
 
 **Khái niệm hỗ trợ / công cụ (Supporting / Tool)**
 
@@ -571,25 +714,25 @@ Tự suy ra vì sao lệnh lớn thường phải chia nhỏ.
 -   Mục tiêu thực thi (Execution objective)
 -   Giới hạn (Limitations)
 
-## 4.6 TWAP
+## Chapter 4.6: TWAP
 
 **Khái niệm hỗ trợ / công cụ (Supporting / Tool)**
 
 So sánh với VWAP từ mục tiêu và ràng buộc.
 
-## 4.7 POV
+## Chapter 4.7: POV
 
 **Khái niệm hỗ trợ (Supporting)**
 
 Tỷ lệ tham gia (Participation rate) và mối quan hệ với khối lượng thị trường.
 
-## 4.8 Iceberg / thanh khoản ẩn (Hidden Liquidity)
+## Chapter 4.8: Iceberg / thanh khoản ẩn (Hidden Liquidity)
 
 **Khái niệm hỗ trợ (Supporting)**
 
 Hiểu tại sao người tham gia có thể không muốn công khai toàn bộ khối lượng.
 
-## 4.9 Thực thi bằng thuật toán (Algorithmic Execution)
+## Chapter 4.9: Thực thi bằng thuật toán (Algorithmic Execution)
 
 **Khái niệm lõi (Core)**
 
@@ -597,7 +740,7 @@ Không học tên thuật toán trước; bắt đầu từ bài toán tối ưu
 
 **Tác động lên giá (Market Impact) ↔ rủi ro thực thi (Execution Risk) ↔ rò rỉ thông tin (Information Leakage) ↔ thời gian (Time)**
 
-## 4.10 Gom hàng / phân phối dưới góc thực thi (Accumulation / Distribution)
+## Chapter 4.10: Gom hàng / phân phối dưới góc thực thi (Accumulation / Distribution)
 
 **Khái niệm lõi (Core)**
 
@@ -610,7 +753,7 @@ Phải hỏi:
 -   Bằng chứng nào hỗ trợ?
 -   Cách giải thích cạnh tranh là gì?
 
-## 4.11 Hành vi tổ chức và thao túng (Institutional Behavior vs Manipulation)
+## Chapter 4.11: Hành vi tổ chức và thao túng (Institutional Behavior vs Manipulation)
 
 **Khái niệm lõi (Core)**
 
@@ -633,15 +776,15 @@ Giải bài toán:
 
 ------------------------------------------------------------------------
 
-# PHẦN 5 --- CẤU TRÚC THỊ TRƯỜNG & HÀNH ĐỘNG GIÁ (MARKET STRUCTURE & PRICE ACTION)
+# MODULE 5 --- TẦNG QUAN SÁT / CẤU TRÚC THỊ TRƯỜNG VÀ HÀNH ĐỘNG GIÁ (MARKET STRUCTURE AND PRICE ACTION)
 
 ## Câu hỏi trung tâm
 
-> **Những cơ chế đã học để lại dấu vết gì trên biểu đồ (chart)?**
+> **Những cơ chế đã học để lại dấu vết gì trên biểu đồ?**
 
 Đây là lúc mới chính thức quay lại biểu đồ.
 
-## 5.1 Cấu trúc thị trường (Market Structure)
+## Chapter 5.1: Cấu trúc thị trường (Market Structure)
 
 **Khái niệm lõi (Core)**
 
@@ -652,7 +795,7 @@ Giải bài toán:
 -   Xu hướng (Trend)
 -   Vùng đi ngang (Range)
 
-## 5.2 Hỗ trợ (Support)
+## Chapter 5.2: Hỗ trợ (Support)
 
 **Khái niệm lõi (Core)**
 
@@ -666,13 +809,13 @@ Phân tích từ:
 
 **Lệnh (Orders) + vị thế đang nắm giữ (Positioning) + ký ức thị trường (Memory) + động cơ/ràng buộc (Incentives) + thanh khoản (Liquidity)**
 
-## 5.3 Kháng cự (Resistance)
+## Chapter 5.3: Kháng cự (Resistance)
 
 **Khái niệm lõi (Core)**
 
 Tương tự hỗ trợ (Support) nhưng không giả định trước người tham gia.
 
-## 5.4 Phá vỡ (Breakout)
+## Chapter 5.4: Phá vỡ (Breakout)
 
 **Khái niệm lõi (Core)**
 
@@ -682,14 +825,14 @@ Phân tích:
 
 và các cách giải thích thay thế.
 
-## 5.5 Phá xuống (Breakdown)
+## Chapter 5.5: Phá xuống (Breakdown)
 
 **Khái niệm lõi (Core)**
 
 Cơ chế đối xứng của phá vỡ lên (breakout) nhưng phải xét tính bất đối xứng do hoảng loạn (panic),
 đòn bẩy (leverage) và bán bắt buộc (forced selling).
 
-## 5.6 Nhịp lùi / hồi lại (Pullback / Retracement)
+## Chapter 5.6: Nhịp lùi / hồi lại (Pullback / Retracement)
 
 **Khái niệm lõi (Core)**
 
@@ -699,13 +842,13 @@ Cơ chế đối xứng của phá vỡ lên (breakout) nhưng phải xét tính
 -   Kiểm tra lại (Retest)
 -   Tiếp diễn hay đảo chiều (Continuation vs reversal)
 
-## 5.7 Phá vỡ thất bại (Failed Breakout)
+## Chapter 5.7: Phá vỡ thất bại (Failed Breakout)
 
 **Khái niệm lõi (Core)**
 
 Một bài học trọng tâm về điều kiện bác bỏ (falsification).
 
-## 5.8 Tích lũy đi ngang / vùng đi ngang (Consolidation / Range)
+## Chapter 5.8: Tích lũy đi ngang / vùng đi ngang (Consolidation / Range)
 
 **Khái niệm lõi (Core)**
 
@@ -715,17 +858,17 @@ Không được mặc định:
 
 Phải kiểm tra các giả thuyết cạnh tranh.
 
-## 5.9 Đảo chiều hay tiếp diễn (Reversal vs Continuation)
+## Chapter 5.9: Đảo chiều hay tiếp diễn (Reversal vs Continuation)
 
 **Khái niệm lõi (Core)**
 
 Bằng chứng nào cho thấy cơ chế thị trường thực sự thay đổi?
 
-## 5.10 Mô hình giá (Chart Patterns)
+## Chapter 5.10: Mô hình giá (Chart Patterns)
 
 **Khái niệm hỗ trợ (Supporting)**
 
-Chỉ sau khi hiểu toàn bộ phần trên mới nghiên cứu:
+Chỉ nên nghiên cứu các mô hình sau khi đã hiểu toàn bộ phần trên:
 
 -   Cốc tay cầm (Cup & Handle)
 -   Hai đáy (Double Bottom)
@@ -744,14 +887,14 @@ tên "Cốc tay cầm (Cup & Handle)".
 
 ------------------------------------------------------------------------
 
-# PHẦN 6 --- WYCKOFF
+# MODULE 6 --- TẦNG DIỄN GIẢI / WYCKOFF NHƯ MỘT GIẢ THUYẾT
 
 ## Câu hỏi trung tâm
 
 > **Có thể suy luận quá trình chuyển giao cổ phiếu giữa các nhóm người
-> tham gia từ Giá + khối lượng + cấu trúc (Price + Volume + Structure) đến mức nào?**
+> tham gia từ giá + khối lượng + cấu trúc (Price + Volume + Structure) đến mức nào?**
 
-## 6.1 Triết lý Wyckoff (Wyckoff Philosophy)
+## Chapter 6.1: Triết lý Wyckoff (Wyckoff Philosophy)
 
 **Khái niệm hỗ trợ (Supporting)**
 
@@ -761,14 +904,14 @@ tên "Cốc tay cầm (Cup & Handle)".
 
 Không xem đây là định luật vật lý.
 
-## 6.2 Người vận hành tổng hợp (Composite Operator)
+## Chapter 6.2: Người vận hành tổng hợp (Composite Operator)
 
 **Khái niệm lõi (Core)**
 
 Hiểu đây là **mô hình tư duy (mental model)**, không mặc định tồn tại một "cá mập duy
 nhất" điều khiển toàn bộ thị trường.
 
-## 6.3 Gom hàng (Accumulation)
+## Chapter 6.3: Gom hàng (Accumulation)
 
 **Khái niệm lõi (Core)**
 
@@ -776,7 +919,7 @@ nhất" điều khiển toàn bộ thị trường.
 -   Hấp thụ nguồn cung (Supply absorption)
 -   Khả năng chuyển giao lượng hàng nắm giữ
 
-## 6.4 Spring
+## Chapter 6.4: Spring
 
 **Khái niệm lõi (Core)**
 
@@ -784,19 +927,19 @@ Phân rã ngược bằng:
 
 **Thanh khoản (Liquidity) + lệnh dừng (Stops) + dòng lệnh (Order Flow) + phục hồi (Recovery)**
 
-## 6.5 Kiểm tra lại (Test)
+## Chapter 6.5: Kiểm tra lại (Test)
 
 **Khái niệm lõi (Core)**
 
 Tại sao thị trường có thể quay lại một vùng và ta muốn quan sát điều gì?
 
-## 6.6 Dấu hiệu sức mạnh (Sign of Strength)
+## Chapter 6.6: Dấu hiệu sức mạnh (Sign of Strength)
 
 **Khái niệm hỗ trợ (Supporting)**
 
 Đánh giá bằng Giá + khối lượng + cấu trúc (Price + Volume + Structure), không chỉ hình dạng.
 
-## 6.7 Phân phối (Distribution)
+## Chapter 6.7: Phân phối (Distribution)
 
 **Khái niệm lõi (Core)**
 
@@ -804,7 +947,7 @@ Tại sao thị trường có thể quay lại một vùng và ta muốn quan s�
 
 > Một người nắm giữ lớn muốn thoát vị thế mà không làm giá sụp ngay.
 
-## 6.8 Upthrust / UTAD
+## Chapter 6.8: Upthrust / UTAD
 
 **Khái niệm lõi (Core)**
 
@@ -815,17 +958,17 @@ So sánh:
 -   Sự kiện thanh khoản
 -   Giả thuyết phân phối
 
-## 6.9 Markup / Markdown
+## Chapter 6.9: Markup / Markdown
 
 **Khái niệm hỗ trợ (Supporting)**
 
 Liên kết với thanh khoản và khám phá giá.
 
-## 6.10 Wyckoff và các cách giải thích thay thế
+## Chapter 6.10: Wyckoff và các cách giải thích thay thế
 
 **Khái niệm lõi (Core)**
 
-Mỗi sơ đồ mẫu phải được kiểm tra chống lại:
+Mỗi sơ đồ mẫu phải được đối chiếu với các cách giải thích thay thế:
 
 -   Tin tức (News)
 -   Định giá lại do yếu tố cơ bản
@@ -842,15 +985,15 @@ sơ đồ mẫu thành công cụ "đọc ý đồ cá mập".
 
 ------------------------------------------------------------------------
 
-# IV. Lớp tích hợp --- Từ dữ liệu đến quyết định
+# MODULE 7 --- TẦNG TÍCH HỢP / TỪ DỮ LIỆU ĐẾN QUYẾT ĐỊNH
 
-Sau 6 phần, mọi tình huống thị trường sử dụng cùng một quy trình (protocol).
+Sau 6 module chuyên môn, mọi tình huống thị trường đều được xử lý bằng cùng một quy trình.
 
-## Bước 1 --- DỮ KIỆN (FACT)
+## Chapter 7.1: Dữ kiện (FACT)
 
 Ghi những gì thực sự quan sát được.
 
-## Bước 2 --- BỐI CẢNH (CONTEXT)
+## Chapter 7.2: Bối cảnh (CONTEXT)
 
 -   Thị trường (Market)
 -   Ngành (Sector)
@@ -859,35 +1002,35 @@ Ghi những gì thực sự quan sát được.
 -   Tin tức/chất xúc tác (News/catalyst)
 -   Khung thời gian (Timeframe)
 
-## Bước 3 --- CƠ CHẾ (MECHANISM)
+## Chapter 7.3: Cơ chế (MECHANISM)
 
 Điều gì có thể tạo ra các dữ kiện trên?
 
-## Bước 4 --- NGƯỜI THAM GIA (ACTORS)
+## Chapter 7.4: Người tham gia (ACTORS)
 
 Những người tham gia nào có thể tạo ra cơ chế đó?
 
-## Bước 5 --- ĐỘNG CƠ/RÀNG BUỘC (INCENTIVES)
+## Chapter 7.5: Động cơ/ràng buộc (INCENTIVES)
 
 Mỗi người tham gia có mục tiêu và ràng buộc gì?
 
-## Bước 6 --- GIẢ THUYẾT (HYPOTHESES)
+## Chapter 7.6: Giả thuyết (HYPOTHESES)
 
-Lập 2--4 cách giải thích cạnh tranh.
+Lập 2 đến 4 cách giải thích cạnh tranh.
 
-## Bước 7 --- DỰ ĐOÁN (PREDICTIONS)
+## Chapter 7.7: Dự đoán (PREDICTIONS)
 
 Nếu mỗi giả thuyết đúng, tiếp theo ta kỳ vọng quan sát thấy gì?
 
-## Bước 8 --- ĐIỀU KIỆN BÁC BỎ (FALSIFICATION)
+## Chapter 7.8: Điều kiện bác bỏ (FALSIFICATION)
 
 Bằng chứng nào khiến mỗi giả thuyết bị loại hoặc giảm xác suất?
 
-## Bước 9 --- CẬP NHẬT (UPDATE)
+## Chapter 7.9: Cập nhật (UPDATE)
 
 Cập nhật mức độ tin tưởng khi có dữ liệu mới.
 
-## Bước 10 --- QUYẾT ĐỊNH (DECISION)
+## Chapter 7.10: Quyết định (DECISION)
 
 Chỉ sau cùng mới hỏi:
 
@@ -977,30 +1120,33 @@ Một khái niệm chỉ được xem là đã hiểu khi người học có th�
 # VIII. Thứ tự học
 
 ``` text
-GIAI ĐOẠN 1
+MODULE 0
+Market Dynamics / Bản đồ hệ thống
+        ↓
+MODULE 1
 Cấu trúc vi mô thị trường (Market Microstructure)
         ↓
-GIAI ĐOẠN 2
+MODULE 2
 Thanh khoản (Liquidity)
         ↓
-GIAI ĐOẠN 3
+MODULE 3
 Dòng lệnh (Order Flow)
         ↓
-GIAI ĐOẠN 4
+MODULE 4
 Thực thi lệnh của tổ chức (Institutional Execution)
         ↓
-GIAI ĐOẠN 5
-Cấu trúc thị trường & hành động giá (Market Structure & Price Action)
+MODULE 5
+Cấu trúc thị trường và hành động giá (Market Structure and Price Action)
         ↓
-GIAI ĐOẠN 6
+MODULE 6
 Wyckoff
         ↓
-TÍCH HỢP
+MODULE 7
 Nghiên cứu tình huống thị trường thực tế (Real Market Case Studies)
 ```
 
 **Không nhảy thẳng sang Wyckoff hoặc Smart Money Concepts trước khi hiểu
-bốn giai đoạn đầu.**
+bốn module chuyên môn đầu sau tổng quan: Market Microstructure, Liquidity, Order Flow và Institutional Execution.**
 
 Mục tiêu cuối cùng không phải trở thành người "nhìn biểu đồ đoán cá mập",
 mà là người có thể nhìn thị trường như một hệ thống gồm **người tham gia (participants) →

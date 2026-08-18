@@ -1,10 +1,10 @@
-# Bài học Phần 3 — Dòng lệnh (Order Flow)
+# Module 3 — Tầng áp lực lệnh / Dòng lệnh (Order Flow)
 
 ## Câu hỏi trung tâm
 
 **Ai đang chủ động yêu cầu giao dịch ngay, và phía đối diện có hấp thụ được không?**
 
-Phần 1 giải thích lệnh biến thành giá. Phần 2 giải thích thị trường có thể hấp thụ bao nhiêu lệnh. Phần 3 nối hai phần đó theo thời gian: lệnh chủ động đang đi theo hướng nào, có kéo dài không, và thanh khoản phía đối diện phản ứng ra sao?
+Module 1 giải thích lệnh biến thành giá. Module 2 giải thích thị trường có thể hấp thụ bao nhiêu lệnh. Module 3 nối hai phần đó theo thời gian: lệnh chủ động đang đi theo hướng nào, có kéo dài không, và thanh khoản phía đối diện phản ứng ra sao?
 
 ## Thuật ngữ cần nắm trước
 
@@ -483,13 +483,13 @@ Delta dương rất lớn nhưng giá giảm vì seller thụ động liên tụ
 # 15. Bản đồ liên kết
 
 ```text
-PHẦN 2 — THANH KHOẢN             PHẦN 3 — DÒNG LỆNH             PHẦN 4 — THỰC THI
+MODULE 2 — THANH KHOẢN           MODULE 3 — DÒNG LỆNH           MODULE 4 — THỰC THI
 sức chứa theo giá         →      lực dùng sức chứa        →      cách chia lệnh lớn
 depth/resiliency                 aggressive/passive              impact/benchmark/time
                                  absorption/exhaustion
 ```
 
-**Cách đọc:** Phần 2 cung cấp vật cản, Phần 3 nghiên cứu lực và phản ứng, Phần 4 giải thích cách actor lớn điều khiển tốc độ của lực đó.
+**Cách đọc:** Module 2 cung cấp vật cản, Module 3 nghiên cứu lực và phản ứng, Module 4 giải thích cách actor lớn điều khiển tốc độ của lực đó.
 
 > **Ghi nhớ:** liquidity là sức chứa; order flow là dòng đang chảy; execution là cách kiểm soát dòng lớn.
 
@@ -537,4 +537,4 @@ Câu trả lời phải có: phía chủ động; thanh khoản đối diện; a
 
 ## 5. Cầu nối sang bài tiếp theo
 
-Nếu một actor có lệnh quá lớn để gửi một lần, họ phải kiểm soát order flow của chính mình. Phần 4 nghiên cứu cách tổ chức chia lệnh và cân bằng **market impact ↔ thời gian ↔ rò rỉ thông tin ↔ rủi ro không hoàn tất**.
+Nếu một actor có lệnh quá lớn để gửi một lần, họ phải kiểm soát order flow của chính mình. Module 4 nghiên cứu cách tổ chức chia lệnh và cân bằng **market impact ↔ thời gian ↔ rò rỉ thông tin ↔ rủi ro không hoàn tất**.

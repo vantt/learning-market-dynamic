@@ -1,4 +1,4 @@
-# Bài học Phần 4 — Thực thi lệnh của tổ chức (Institutional Execution)
+# Module 4 — Tầng thực thi / Lệnh tổ chức (Institutional Execution)
 
 ## Câu hỏi trung tâm
 
@@ -161,7 +161,7 @@ Phát biểu nhân quả: **một lệnh chưa khớp không có slippage đã t
 
 ## 4.3 Chia nhỏ lệnh
 
-Nếu ask gần có 80,000, gửi 3 triệu sẽ để lộ nhu cầu và quét sâu. Chia lệnh cho phép quan sát phản ứng sau từng phần.
+Nếu ask gần có 80,000, gửi 3 triệu sẽ để lộ nhu cầu và quét sâu. Chia lệnh cho phép quan sát phản ứng sau từng module.
 
 ```text
 LỆNH MẸ 3,000,000
@@ -441,7 +441,7 @@ dấu vết lệnh chủ động  →   kiểm soát nhịp lệnh lớn       �
 absorption/exhaustion       slicing/impact/benchmark             trend/range/breakout
 ```
 
-**Cách đọc:** Phần 4 giải thích một nguồn tạo persistence trong Phần 3 và một nguồn tạo cấu trúc quan sát ở Phần 5.
+**Cách đọc:** Module 4 giải thích một nguồn tạo persistence trong Module 3 và một nguồn tạo cấu trúc quan sát ở Module 5.
 
 > **Ghi nhớ:** execution lặp lại biến bài toán một lệnh thành dấu vết nhiều phiên.
 
@@ -485,4 +485,4 @@ Phân tích được quỹ cần mua nhiều ngày liquidity bình thường: ob
 
 ## Cầu nối sang bài tiếp theo
 
-Chuỗi child orders, absorption và liquidity migration lặp lại tạo đỉnh, đáy, range và breakout. Phần 5 quay lại chart để đọc các cấu trúc đó như kết quả, không như nguyên nhân.
+Chuỗi child orders, absorption và liquidity migration lặp lại tạo đỉnh, đáy, range và breakout. Module 5 quay lại chart để đọc các cấu trúc đó như kết quả, không như nguyên nhân.

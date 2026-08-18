@@ -1,4 +1,4 @@
-# Bài học Phần 1 — Market Microstructure
+# Module 1 — Tầng cơ chế / Cấu trúc vi mô thị trường (Market Microstructure)
 
 ## Câu hỏi trung tâm
 
@@ -1090,7 +1090,7 @@ Buyer ưu tiên khớp ngay hơn kiểm soát giá. Sellers sẵn sàng bán t�
 
 - Buyer cần vào vị thế ngay.
 - Buyer phản ứng với thông tin.
-- Buyer là execution algo đang mua từng phần.
+- Buyer là execution algo đang mua từng module.
 
 ### Bằng chứng (Evidence)
 
@@ -1327,7 +1327,7 @@ Toàn khóa đi theo chuỗi:
 **Người tham gia (participants) → động cơ/ràng buộc (incentives) → lệnh (orders) → sổ lệnh (order book) → dòng lệnh (order flow) ↔ thanh khoản (liquidity) → mất cân bằng/hấp thụ (imbalance/absorption) → khám phá giá (price discovery) → giá và khối lượng (price & volume) → cấu trúc thị trường (market structure) → hành động giá (price action) → mô hình giá (patterns)**
 
 ```text
-PREVIOUS / UPSTREAM                  PHẦN 1                    NEXT / DOWNSTREAM
+PREVIOUS / UPSTREAM                  MODULE 1                  NEXT / DOWNSTREAM
 
 NGƯỜI THAM GIA                 LỆNH → SỔ LỆNH              DÒNG LỆNH ↔ THANH KHOẢN
        ↓                              ↓                              ↓
@@ -1340,9 +1340,9 @@ NGƯỜI THAM GIA                 LỆNH → SỔ LỆNH              DÒNG LỆ
 
 Phát biểu nhân quả: **participants với động cơ khác nhau tạo ra orders; orders tương tác với liquidity để hình thành transactions và price; chuỗi transaction lặp lại mới tạo thành order flow, market structure và price action.**
 
-> **Ghi nhớ:** Phần 1 đi từ ý định đến giá; Phần 2 bắt đầu từ câu hỏi thị trường hấp thụ lệnh được bao nhiêu.
+> **Ghi nhớ:** Module 1 đi từ ý định đến giá; Module 2 bắt đầu từ câu hỏi thị trường hấp thụ lệnh được bao nhiêu.
 
-Phần 1 chủ yếu bao phủ đoạn đầu:
+Module 1 chủ yếu bao phủ đoạn đầu:
 
 **Người tham gia → động cơ/ràng buộc → lệnh → sổ lệnh → khớp lệnh/khám phá giá**
 
@@ -1414,4 +1414,4 @@ Sau khi hiểu rằng lệnh mua/bán làm giá thay đổi bằng cách tiêu t
 
 > **Thanh khoản (liquidity) thực sự là gì, nằm ở đâu, và vì sao dòng tiền lớn cần thanh khoản?**
 
-Đó là Phần 2. Nếu Phần 1 giải thích **lệnh biến thành giá như thế nào**, thì Phần 2 giải thích **thị trường có thể hấp thụ bao nhiêu lệnh trước khi giá phải di chuyển mạnh**.
+Đó là Module 2. Nếu Module 1 giải thích **lệnh biến thành giá như thế nào**, thì Module 2 giải thích **thị trường có thể hấp thụ bao nhiêu lệnh trước khi giá phải di chuyển mạnh**.

@@ -1,4 +1,4 @@
-# Bài học Phần 6 — Wyckoff như một khung giả thuyết
+# Module 6 — Tầng diễn giải / Wyckoff như một giả thuyết
 
 ## Câu hỏi trung tâm
 
@@ -501,6 +501,6 @@ Bạn đạt Gate 6 nếu có thể dùng Wyckoff như framework xác suất:
 
 ## Cầu nối sang lớp tích hợp
 
-Sau sáu phần, không còn bài mới để “gắn nhãn”. Bước tiếp theo là nghiên cứu case thực bằng protocol chung:
+Sau sáu module, không còn bài mới để “gắn nhãn”. Bước tiếp theo là nghiên cứu case thực bằng protocol chung:
 
 **Fact → Context → Mechanism → Actors → Incentives → Hypotheses → Predictions → Falsification → Update → Decision.**

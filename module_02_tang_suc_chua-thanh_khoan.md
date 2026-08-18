@@ -1,10 +1,10 @@
-# Bài học Phần 2 — Thanh khoản (Liquidity)
+# Module 2 — Tầng sức chứa / Thanh khoản (Liquidity)
 
 ## Câu hỏi trung tâm
 
 **Nếu tôi muốn giao dịch một lượng rất lớn, ai sẽ đứng phía bên kia?**
 
-Ở Phần 1, ta đã thấy giá không tự di chuyển. Giá thay đổi khi lệnh chủ động tiêu thụ thanh khoản đang chờ trong sổ lệnh. Câu hỏi tiếp theo gần như bắt buộc là: **thị trường có bao nhiêu khả năng hấp thụ trước khi giá phải di chuyển mạnh?**
+Ở Module 1, ta đã thấy giá không tự di chuyển. Giá thay đổi khi lệnh chủ động tiêu thụ thanh khoản đang chờ trong sổ lệnh. Câu hỏi tiếp theo gần như bắt buộc là: **thị trường có bao nhiêu khả năng hấp thụ trước khi giá phải di chuyển mạnh?**
 
 Đó là bài toán của **thanh khoản (Liquidity)**.
 
@@ -687,7 +687,7 @@ Nhưng range không tự động nghĩa là “gom hàng” hay “phân phối�
 
 ## 7.4 Hỗ trợ/kháng cự (Support/Resistance)
 
-Ở phần sau ta sẽ học sâu hơn, nhưng từ góc liquidity:
+Ở Module 5 ta sẽ học sâu hơn, nhưng từ góc liquidity:
 
 - Hỗ trợ có thể là vùng bid liquidity xuất hiện hoặc sell orders được hấp thụ.
 - Kháng cự có thể là vùng ask liquidity xuất hiện hoặc buy orders bị hấp thụ.
@@ -1570,7 +1570,7 @@ Hãy giải thích không dùng thuật ngữ chuyên môn:
 
 ## Kiến thức cần có trước (Prerequisite)
 
-Từ Phần 1, cần hiểu:
+Từ Module 1, cần hiểu:
 
 - Lệnh thị trường tiêu thụ thanh khoản.
 - Lệnh giới hạn cung cấp thanh khoản.
@@ -1603,7 +1603,7 @@ Liquidity nói về **khả năng hấp thụ**. Order flow nói về **ai đang
 **Participants → Incentives → Orders → Order Book → Liquidity → Order Flow → Imbalance/Absorption → Price Discovery → Price & Volume → Market Structure → Wyckoff/Market Hypotheses**
 
 ```text
-PHẦN TRƯỚC / UPSTREAM           PHẦN 2 — THANH KHOẢN           PHẦN SAU / DOWNSTREAM
+MODULE TRƯỚC / UPSTREAM         MODULE 2 — THANH KHOẢN         MODULE SAU / DOWNSTREAM
 
 NGƯỜI THAM GIA                   LỆNH ĐANG CHỜ                 DÒNG LỆNH CHỦ ĐỘNG
        ↓                              +                               ↓
@@ -1612,13 +1612,13 @@ NGƯỜI THAM GIA                   LỆNH ĐANG CHỜ                 DÒNG L�
 LỆNH → SỔ LỆNH              KHẢ NĂNG HẤP THỤ THEO GIÁ        KHÁM PHÁ GIÁ → PRICE ACTION
 ```
 
-**Cách đọc:** cột trái giải thích thanh khoản được tạo ra từ đâu; cột giữa là nội dung Phần 2; cột phải cho thấy thanh khoản trở thành vật cản mà dòng lệnh ở Phần 3 sẽ tác động vào.
+**Cách đọc:** cột trái giải thích thanh khoản được tạo ra từ đâu; cột giữa là nội dung Module 2; cột phải cho thấy thanh khoản trở thành vật cản mà dòng lệnh ở Module 3 sẽ tác động vào.
 
 Phát biểu nhân quả: **động cơ và rủi ro tạo ra lệnh đang chờ hoặc lệnh có điều kiện; chúng quyết định khả năng hấp thụ; dòng lệnh chủ động tương tác với khả năng đó để tạo mất cân bằng, khám phá giá và hành động giá quan sát được.**
 
-> **Ghi nhớ:** Phần 2 học sức chứa của thị trường; Phần 3 học dòng lệnh đang sử dụng sức chứa đó.
+> **Ghi nhớ:** Module 2 học sức chứa của thị trường; Module 3 học dòng lệnh đang sử dụng sức chứa đó.
 
-Phần 2 chủ yếu bao phủ:
+Module 2 chủ yếu bao phủ:
 
 **Orders → Resting/Triggered Liquidity → Liquidity Pools → Sweeps/Vacuums → Price Discovery**
 
@@ -1689,6 +1689,6 @@ Sau khi hiểu liquidity là khả năng hấp thụ, câu hỏi kế tiếp là
 
 > **Ai đang chủ động tiêu thụ thanh khoản, và phía đối diện có hấp thụ được không?**
 
-Đó là Phần 3 — **Dòng lệnh (Order Flow)**.
+Đó là Module 3 — **Dòng lệnh (Order Flow)**.
 
-Nếu Phần 2 giải thích **thanh khoản nằm ở đâu và vì sao giá chạy nhanh khi liquidity bị tiêu thụ**, thì Phần 3 sẽ giải thích **dòng lệnh chủ động và sự hấp thụ để lại dấu vết gì trong price, volume, bid/ask, delta và footprint**.
+Nếu Module 2 giải thích **thanh khoản nằm ở đâu và vì sao giá chạy nhanh khi liquidity bị tiêu thụ**, thì Module 3 sẽ giải thích **dòng lệnh chủ động và sự hấp thụ để lại dấu vết gì trong price, volume, bid/ask, delta và footprint**.
